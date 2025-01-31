@@ -6,7 +6,6 @@ from utilities.CustomLog import LogGenerator
 import pytest
 import os
 
-
 class TestAccountReg:
     baseURL = ReadConfig.getapplicationurl()
     logger = LogGenerator.get_logger()
