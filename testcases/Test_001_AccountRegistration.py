@@ -1,3 +1,12 @@
+# add the following imports - AccountsRegistration, HomePage, RandomString, CustomLog ReadProperties and os
+# in ReadProperties create static methods for URL. Add to config.ini
+# create a class
+# in Test_001 add the variables baseURL=getapplicationurl() and logger
+# create method
+    # launch browser, click create an account, enter details, click sign in, check for "Home Page" title
+# setup screenshots to capture failures
+# create a group
+
 from pageobjects.AccountRegistration import RegPage
 from pageobjects.HomePage import MainPage
 from utilities.RandomString import random_string_generator

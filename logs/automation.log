@@ -85,3 +85,53 @@
 01/29/2025 06:06:58 PM: INFO: *** Enter Personal Details ***
 01/29/2025 06:07:01 PM: INFO: *** Account Registration Passed ***
 01/29/2025 06:07:01 PM: INFO: *** Account Registration Complete ***
+01/31/2025 06:28:48 AM: INFO: *** Account Registration Started ***
+01/31/2025 06:28:48 AM: INFO: *** Navigate to Account Registration ***
+01/31/2025 06:28:50 AM: INFO: *** Click Account ***
+01/31/2025 06:28:51 AM: INFO: *** Enter Personal Details ***
+01/31/2025 06:28:56 AM: INFO: *** Account Registration Passed ***
+01/31/2025 06:28:56 AM: INFO: *** Account Registration Complete ***
+02/02/2025 05:13:54 AM: INFO: *** Test_002_Login Started ***
+02/02/2025 05:16:03 AM: INFO: *** Test_002_Login Started ***
+02/02/2025 05:16:06 AM: INFO: *** Click Sign In ***
+02/02/2025 05:16:07 AM: INFO: *** Enter Credentials ***
+02/02/2025 05:16:10 AM: INFO: *** Check Header ***
+02/02/2025 05:20:14 AM: INFO: *** Test_002_Login Started ***
+02/02/2025 05:20:17 AM: INFO: *** Click Sign In ***
+02/02/2025 05:20:18 AM: INFO: *** Enter Credentials ***
+02/02/2025 05:20:21 AM: INFO: *** Check Header ***
+02/02/2025 05:20:21 AM: INFO: *** Login Failed ***
+02/02/2025 05:26:19 AM: INFO: *** Test_002_Login Started ***
+02/02/2025 05:26:22 AM: INFO: *** Click Sign In ***
+02/02/2025 05:26:23 AM: INFO: *** Enter Credentials ***
+02/02/2025 05:26:26 AM: INFO: *** Check Header ***
+02/02/2025 05:26:26 AM: INFO: *** Login Failed ***
+02/02/2025 05:28:15 AM: INFO: *** Test_002_Login Started ***
+02/02/2025 05:28:17 AM: INFO: *** Click Sign In ***
+02/02/2025 05:28:18 AM: INFO: *** Enter Credentials ***
+02/02/2025 05:28:21 AM: INFO: *** Check Header ***
+02/02/2025 05:28:21 AM: INFO: *** Login Failed ***
+02/02/2025 05:29:36 AM: INFO: *** Test_002_Login Started ***
+02/02/2025 05:29:39 AM: INFO: *** Click Sign In ***
+02/02/2025 05:29:40 AM: INFO: *** Enter Credentials ***
+02/02/2025 05:29:43 AM: INFO: *** Check Header ***
+02/02/2025 05:29:43 AM: INFO: *** Login Passed ***
+02/02/2025 05:29:43 AM: INFO: *** Test_002_Login Complete ***
+02/02/2025 05:38:12 AM: INFO: *** Test_002_Login Started ***
+02/02/2025 05:38:15 AM: INFO: *** Click Sign In ***
+02/02/2025 05:38:16 AM: INFO: *** Enter Credentials ***
+02/02/2025 05:38:18 AM: INFO: *** Check Header ***
+02/02/2025 05:38:18 AM: INFO: *** Login Passed ***
+02/02/2025 05:38:18 AM: INFO: *** Test_002_Login Complete ***
+02/02/2025 05:38:51 AM: INFO: *** Account Registration Started ***
+02/02/2025 05:38:51 AM: INFO: *** Navigate to Account Registration ***
+02/02/2025 05:38:54 AM: INFO: *** Click Account ***
+02/02/2025 05:38:55 AM: INFO: *** Enter Personal Details ***
+02/02/2025 05:38:59 AM: INFO: *** Account Registration Passed ***
+02/02/2025 05:38:59 AM: INFO: *** Account Registration Complete ***
+02/02/2025 05:39:02 AM: INFO: *** Test_002_Login Started ***
+02/02/2025 05:39:05 AM: INFO: *** Click Sign In ***
+02/02/2025 05:39:06 AM: INFO: *** Enter Credentials ***
+02/02/2025 05:39:09 AM: INFO: *** Check Header ***
+02/02/2025 05:39:09 AM: INFO: *** Login Passed ***
+02/02/2025 05:39:09 AM: INFO: *** Test_002_Login Complete ***
