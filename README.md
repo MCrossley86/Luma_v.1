@@ -61,7 +61,24 @@
     - Ran the tests on Jenkins.
    
 **Future Projects**
-    - Build on test scenarios and cases for Login and Data Driven testing
-    - Develop the page object class for Login
-    - Create a test case to login successfully
-    - Expand on the login page by creating a data-driven testing
+    - Automate Test Cases for the following scenarios:
+        - Validate login functionality - COMPLETE
+        - Validate logout functionality
+        - Validate reset password functionality
+        - Validate search functionality 
+        - Validate the wish list functionality
+        - Validate Home Page functionality
+        - Validate 'What's New' functionality
+        - Validate 'Women' functionality
+        - Validate 'Men' functionality
+        - Validate 'Gear' functionality
+        - Validate 'Training' functionality
+        - Validate 'Sale' functionality
+        - Validate 'My Account' functionality
+        - Validate the add to cart functionality
+            - My Account
+            - My Wish List
+            - Sign Out
+        - Validate the shopping cart functionality 
+        - Verify checkout functionality
+    - Expand on the login page by creating a data-driven test
