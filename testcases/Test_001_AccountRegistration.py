@@ -48,9 +48,11 @@ class TestAccountReg:
             self.confhead=self.rp.getheadtitle()
             assert self.confhead=="My Account"
             self.logger.info("*** Account Registration Passed ***")
+            print(" Account Registration successful")
         except Exception:
             self.logger.info("*** Account Registration Failed ***")
             screenshot_filename = os.path.join(screenshots_path, "test_account_reg.png")
             self.driver.save_screenshot(screenshot_filename)
+            print(" Account Registration unsuccessful")
             raise Exception
         self.logger.info("*** Account Registration Complete ***")
