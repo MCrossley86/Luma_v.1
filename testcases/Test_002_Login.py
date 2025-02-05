@@ -1,4 +1,3 @@
-from pageobjects.AccountRegistration import RegPage
 from pageobjects.HomePage import MainPage
 from pageobjects.CustomerLogin import CustLogin
 from utilities.CustomLog import LogGenerator

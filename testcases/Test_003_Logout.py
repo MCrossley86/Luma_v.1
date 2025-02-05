@@ -1,4 +1,3 @@
-from pageobjects.AccountRegistration import RegPage
 from pageobjects.HomePage import MainPage
 from pageobjects.CustomerLogin import CustLogin
 from pageobjects.MyAccount import MyAccount
@@ -6,7 +5,6 @@ from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
 import os
-import time
 
 class TestLogout():
     baseURL = ReadConfig.getapplicationurl()
@@ -14,6 +12,7 @@ class TestLogout():
     password = ReadConfig.getpassword()
     logger = LogGenerator.get_logger()
 
+    @pytest.mark.sanity
     def test_logout(self,setup):
         self.logger.info("*** Test_003_Logout Started ***")
         self.driver = setup
