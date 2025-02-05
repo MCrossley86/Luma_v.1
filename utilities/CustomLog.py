@@ -16,7 +16,7 @@ class LogGenerator:
         logger = logging.getLogger()
         logger.setLevel(logging.DEBUG)
 
-        # clear previous log entries
+        # clear previous handlers
         if logger.hasHandlers():
             logger.handlers.clear()
 
