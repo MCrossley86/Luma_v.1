@@ -20,7 +20,7 @@ class LogGenerator:
         if logger.hasHandlers():
             logger.handlers.clear()
 
-        # once cleared create a new automation.log file
+        # create a new file handler with the desired format
         file_handler = logging.FileHandler(log_file)
         file_handler.setLevel(logging.DEBUG)
         formatter = logging.Formatter(
@@ -30,7 +30,7 @@ class LogGenerator:
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
 
-        # add to the root logger
+        # add the file handler to the root logger
         logger.propagate = True
         return logger
 
