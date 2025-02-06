@@ -23,8 +23,8 @@
    - Created `conftest.py` under the Testcases folder for driver management.
 
 5. **Automated Account Registration Test Case**
-   - Developed page object classes for the homepage and account registration.
-   - Created test cases for account registration.
+   - Developed page object class for account registration.
+   - Created a test case to register an account.
    - Included registration fields and wrote a utility to generate random email strings.
 
 6. **Failure Handling**
@@ -59,11 +59,21 @@
 
 14. **Continuous Integration**
     - Ran the tests on Jenkins.
+
+**Continuous Integration**
+
+15. **Automated Login Test Case**
+    - Developed page object class for the login "CustomerLogin".
+    - Created a test case for logging in.
+
+16. **Automated Logout Test Case**
+    - Developed page object class for the logout "MyAccount".
+    - Created a test case for logging out.
    
 **Future Projects**
     - Automate Test Cases for the following scenarios:
         - Validate login functionality - COMPLETE
-        - Validate logout functionality
+        - Validate logout functionality - COMPLETE
         - Validate reset password functionality
         - Validate search functionality 
         - Validate the wish list functionality
