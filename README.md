@@ -69,6 +69,10 @@
 16. **Automated Logout Test Case**
     - Developed page object class for the logout "MyAccount".
     - Created a test case for logging out.
+
+17. 16. **Automated Login DDT Test Case**
+    - Created a test case for data driven testing.
+    - **Note: There are some current issues which I am resolving**
    
 **Future Projects**
     - Automate Test Cases for the following scenarios:
