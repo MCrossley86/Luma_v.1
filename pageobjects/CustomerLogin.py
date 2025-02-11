@@ -7,7 +7,7 @@ class CustLogin():
     fld_pwd_xpth = "//fieldset[@class='fieldset login']//input[@id='pass']"
     fld_sign_xpth = "//fieldset[@class='fieldset login']//button[@id='send2']"
     txt_conf_title = "//span[@class='base']"
-    msg_myaccount_xpath = "//span[@class='base']"
+    msg_myaccount_xpath = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='Home Page']"
 
     def __init__(self,driver):
         self.driver = driver
@@ -42,6 +42,18 @@ class CustLogin():
         signin_button.click()
         print("Found Sign In link, clicking...")
 
+    def clear_email_field(self):
+        print(f"Current URL: {self.driver.current_url}")
+        print("Looking for email field...")
+        self.driver.find_element(By.XPATH, self.fld_email_xpth).clear()
+        print("Cleared email field...")
+
+    def clear_password_field(self):
+        print(f"Current URL: {self.driver.current_url}")
+        print("Looking for password field...")
+        self.driver.find_element(By.XPATH, self.fld_pwd_xpth).clear()
+        print("Cleared password field...")
+
     def gethomepagetitle(self):
         print(f"Current URL: {self.driver.current_url}")
         print("Looking for home page title...")
@@ -53,7 +65,11 @@ class CustLogin():
         print("Found home page title, logging out...")
 
     def isMyAccountPageExists(self):
+        print(f"Current URL: {self.driver.current_url}")
+        print("Is home page title displayed?...")
         try:
+            print("Yes it is...")
             return self.driver.find_element(By.XPATH,self.msg_myaccount_xpath).is_displayed()
         except:
+            print("No it isn't...")
             return False

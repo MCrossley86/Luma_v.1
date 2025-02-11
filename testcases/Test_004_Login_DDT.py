@@ -6,7 +6,6 @@ from utilities.ReadProperties import ReadConfig
 from utilities import XLUtils
 import pytest
 import os
-import time
 
 class TestLogin_DDT:
     baseURL = ReadConfig.getapplicationurl()
@@ -51,7 +50,8 @@ class TestLogin_DDT:
             elif self.expected=='Invalid':
                 if self.target_page==True:
                     lst_status.append('Fail')
-                    self.mp.clicksign()
+                    self.cl.clear_email_field()
+                    self.cl.clear_password_field()
                 else:
                     lst_status.append('Pass')
         self.driver.close()
