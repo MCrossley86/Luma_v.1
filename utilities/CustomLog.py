@@ -21,7 +21,7 @@ class LogGenerator:
             logger.handlers.clear()
 
         # create a new file handler with the desired format
-        file_handler = logging.FileHandler(log_file)
+        file_handler = logging.FileHandler(log_file, mode='w')
         file_handler.setLevel(logging.DEBUG)
         formatter = logging.Formatter(
                 '%(asctime)s: %(levelname)s: %(message)s',

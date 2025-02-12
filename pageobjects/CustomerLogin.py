@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 
-class CustLogin():
+class CustLogin:
     fld_email_xpth = "//input[@id='email']"
     fld_pwd_xpth = "//fieldset[@class='fieldset login']//input[@id='pass']"
     fld_sign_xpth = "//fieldset[@class='fieldset login']//button[@id='send2']"
@@ -15,61 +15,58 @@ class CustLogin():
 
     def enteremail(self,email):
         print(f"Current URL: {self.driver.current_url}")
-        print("Looking for email field...")
+        print("Enter email")
         email_field = self.wait.until(
-            EC.presence_of_element_located((By.XPATH, self.fld_email_xpth))
+            ec.presence_of_element_located((By.XPATH, self.fld_email_xpth))
         )
         email_field.clear()
         email_field.send_keys(email)
-        print("Found email field, entering keys...")
 
     def enterpwd(self, pwd):
         print(f"Current URL: {self.driver.current_url}")
-        print("Looking for password field...")
+        print("Enter password")
         pwd_field = self.wait.until(
-            EC.presence_of_element_located((By.XPATH, self.fld_pwd_xpth))
+            ec.presence_of_element_located((By.XPATH, self.fld_pwd_xpth))
         )
         pwd_field.clear()  # Clear any existing text
         pwd_field.send_keys(pwd)
-        print("Found password field, entering keys...")
 
     def clicksignin(self):
         print(f"Current URL: {self.driver.current_url}")
-        print("Looking for Sign In link...")
+        print("Click signin")
         signin_button = self.wait.until(
-            EC.element_to_be_clickable((By.XPATH, self.fld_sign_xpth))
+            ec.element_to_be_clickable((By.XPATH, self.fld_sign_xpth))
         )
         signin_button.click()
-        print("Found Sign In link, clicking...")
 
     def clear_email_field(self):
         print(f"Current URL: {self.driver.current_url}")
-        print("Looking for email field...")
+        print("Clear email field")
         self.driver.find_element(By.XPATH, self.fld_email_xpth).clear()
-        print("Cleared email field...")
 
     def clear_password_field(self):
         print(f"Current URL: {self.driver.current_url}")
-        print("Looking for password field...")
+        print("Clear password field")
         self.driver.find_element(By.XPATH, self.fld_pwd_xpth).clear()
-        print("Cleared password field...")
 
     def gethomepagetitle(self):
         print(f"Current URL: {self.driver.current_url}")
-        print("Looking for home page title...")
+        print("Capturing text")
         try:
-            return self.driver.find_element(By.XPATH,self.txt_conf_title).text
-            print("Found home page title, logging out...")
-        except:
-            None
-        print("Found home page title, logging out...")
+            text_capture = self.driver.find_element(By.XPATH, self.txt_conf_title).text
+            print("Text captured")
+            return text_capture
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return False
 
-    def isMyAccountPageExists(self):
+    def ismyaccountpageexists(self):
         print(f"Current URL: {self.driver.current_url}")
-        print("Is home page title displayed?...")
+        print("Checking for element")
         try:
-            print("Yes it is...")
-            return self.driver.find_element(By.XPATH,self.msg_myaccount_xpath).is_displayed()
-        except:
-            print("No it isn't...")
+            element_displayed = self.driver.find_element(By.XPATH, self.msg_myaccount_xpath).is_displayed()
+            print("Element displayed...")
+            return element_displayed
+        except Exception as e:
+            print(f"An error occurred: {e}")
             return False
