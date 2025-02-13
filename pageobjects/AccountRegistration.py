@@ -1,6 +1,9 @@
+# Import the necessary modules
 from selenium.webdriver.common.by import By
+from utilities.CustomLog import LogGenerator
 
-class RegPage():
+class RegPage:
+    # Define locators for webpage elements
     txt_field_firstname = "//input[@id='firstname']"
     txt_field_lastname = "//input[@id='lastname']"
     txt_field_email = "//input[@id='email_address']"
@@ -10,30 +13,46 @@ class RegPage():
     txt_conf = "//span[@class='base']"
 
     def __init__(self, driver):
+        # Initialize the driver and logger
         self.driver = driver
+        self.logger = LogGenerator.get_logger()
 
-    def setfirstname(self,fname):
-        self.driver.find_element(By.XPATH,self.txt_field_firstname).send_keys(fname)
+    def set_first_name(self,f_name):
+        # Log the action and set up the first name in the corresponding field
+        self.logger.debug(f"Setting first name: {f_name}")
+        self.driver.find_element(By.XPATH,self.txt_field_firstname).send_keys(f_name)
 
-    def setlastname(self,lname):
-        self.driver.find_element(By.XPATH,self.txt_field_lastname).send_keys(lname)
+    def set_last_name(self,l_name):
+        # Log the action and set up the last name in the corresponding field
+        self.logger.debug(f"Setting last name: {l_name}")
+        self.driver.find_element(By.XPATH,self.txt_field_lastname).send_keys(l_name)
 
-    def setemail(self,email):
+    def set_email(self,email):
+        # Log the action and set up the email in the corresponding field
+        self.logger.debug(f"Setting email: {email}")
         self.driver.find_element(By.XPATH,self.txt_field_email).send_keys(email)
 
-    def setpassword(self,pswd):
-        self.driver.find_element(By.XPATH,self.txt_field_password).send_keys(pswd)
+    def set_password(self,password):
+        # Log the action and set up the password in the corresponding field
+        self.logger.debug(f"Setting password")
+        self.driver.find_element(By.XPATH,self.txt_field_password).send_keys(password)
 
-    def confirmpassword(self,conf_pswd):
-        self.driver.find_element(By.XPATH,self.txt_field_confirm).send_keys(conf_pswd)
+    def confirm_password(self,confirm_password):
+        # Log the action and confirm the password in the corresponding field
+        self.logger.debug(f"Confirming password")
+        self.driver.find_element(By.XPATH,self.txt_field_confirm).send_keys(confirm_password)
 
-    def clickcreate(self):
+    def click_create(self):
+        # Log the action and click the "Create an Account" button
+        self.logger.debug(f"Clicking create an account")
         self.driver.find_element(By.XPATH,self.btn_create).click()
 
-    def getheadtitle(self):
+    def capt_header_title(self):
+        # Capture the header title text and handle any exceptions
         try:
             return self.driver.find_element(By.XPATH,self.txt_conf).text
-        except:
-            None
+        except Exception as e:
+            self.logger.error(f"Error retrieving head title: {e}")
+            return None
 
 
