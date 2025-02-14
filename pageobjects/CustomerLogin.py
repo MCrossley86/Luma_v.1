@@ -1,57 +1,48 @@
+# Import the necessary modules
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
+from utilities.CustomLog import LogGenerator
 
 class CustLogin:
-    fld_email_xpth = "//input[@id='email']"
-    fld_pwd_xpth = "//fieldset[@class='fieldset login']//input[@id='pass']"
-    fld_sign_xpth = "//fieldset[@class='fieldset login']//button[@id='send2']"
+    # Define locators for webpage elements
+    fld_email_xpath = "//input[@id='email']"
+    fld_pwd_xpath = "//fieldset[@class='fieldset login']//input[@id='pass']"
+    fld_sign_xpath = "//fieldset[@class='fieldset login']//button[@id='send2']"
     txt_conf_title = "//span[@class='base']"
-    msg_myaccount_xpath = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='Home Page']"
+    msg_my_account_xpath = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='Home Page']"
 
-    def __init__(self,driver):
+    def __init__(self, driver):
+        # Initialize the driver and logger
         self.driver = driver
-        self.wait = WebDriverWait(self.driver, 10)
+        self.logger = LogGenerator.get_logger()
 
-    def enteremail(self,email):
-        print(f"Current URL: {self.driver.current_url}")
-        print("Enter email")
-        email_field = self.wait.until(
-            ec.presence_of_element_located((By.XPATH, self.fld_email_xpth))
-        )
-        email_field.clear()
-        email_field.send_keys(email)
+    def enter_email(self, email):
+        # Log the action and enter the email in the corresponding field
+        self.logger.debug(f"Entering email: {email}")
+        self.driver.find_element(By.XPATH,self.fld_email_xpath).send_keys(email)
 
-    def enterpwd(self, pwd):
-        print(f"Current URL: {self.driver.current_url}")
-        print("Enter password")
-        pwd_field = self.wait.until(
-            ec.presence_of_element_located((By.XPATH, self.fld_pwd_xpth))
-        )
-        pwd_field.clear()  # Clear any existing text
-        pwd_field.send_keys(pwd)
+    def enter_pwd(self, pwd):
+        # Log the action and enter the password in the corresponding field
+        self.logger.debug(f"Entering password: {pwd}")
+        self.driver.find_element(By.XPATH,self.fld_pwd_xpath).send_keys(pwd)
 
-    def clicksignin(self):
-        print(f"Current URL: {self.driver.current_url}")
-        print("Click signin")
-        signin_button = self.wait.until(
-            ec.element_to_be_clickable((By.XPATH, self.fld_sign_xpth))
-        )
-        signin_button.click()
+    def click_signin(self):
+        # Log the action and click the "Sign in" button
+        self.logger.debug(f"Clicking sign in")
+        self.driver.find_element(By.XPATH, self.fld_sign_xpath).click()
 
     def clear_email_field(self):
-        print(f"Current URL: {self.driver.current_url}")
-        print("Clear email field")
+        # Log the action and clear the email field
+        self.logger.debug(f"Clearing email")
         self.driver.find_element(By.XPATH, self.fld_email_xpth).clear()
 
     def clear_password_field(self):
-        print(f"Current URL: {self.driver.current_url}")
-        print("Clear password field")
+        # Log the action and clear the password field
+        self.logger.debug(f"Clearing password")
         self.driver.find_element(By.XPATH, self.fld_pwd_xpth).clear()
 
-    def gethomepagetitle(self):
-        print(f"Current URL: {self.driver.current_url}")
-        print("Capturing text")
+    def get_home_page_title(self):
+        # Log the action and capture the header text
+        self.logger.debug(f"Capturing header text")
         try:
             text_capture = self.driver.find_element(By.XPATH, self.txt_conf_title).text
             print("Text captured")
@@ -60,11 +51,11 @@ class CustLogin:
             print(f"An error occurred: {e}")
             return False
 
-    def ismyaccountpageexists(self):
-        print(f"Current URL: {self.driver.current_url}")
-        print("Checking for element")
+    def is_my_account_page_exists(self):
+        # Log the action and check the header is displayed
+        self.logger.debug(f"Checking header is displayed")
         try:
-            element_displayed = self.driver.find_element(By.XPATH, self.msg_myaccount_xpath).is_displayed()
+            element_displayed = self.driver.find_element(By.XPATH, self.msg_my_account_xpath).is_displayed()
             print("Element displayed...")
             return element_displayed
         except Exception as e:

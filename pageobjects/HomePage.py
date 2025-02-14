@@ -1,22 +1,23 @@
-from selenium.webdriver.support.ui import WebDriverWait
+# Import the necessary modules
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from utilities.CustomLog import LogGenerator
 
 class MainPage:
-    lnk_account_xpth = "//div[@class='panel header']//a[normalize-space()='Create an Account']"
-    lnk_sign_xpth = "//div[@class='panel header']//a[contains(text(),'Sign In')]"
+    # Define locators for webpage elements
+    lnk_account_xpath = "//div[@class='panel header']//a[normalize-space()='Create an Account']"
+    lnk_sign_xpath = "//div[@class='panel header']//a[contains(text(),'Sign In')]"
 
     def __init__(self, driver):
-         self.driver = driver
-         self.wait = WebDriverWait(self.driver, 10)
+        # Initialize the driver and logger
+        self.driver = driver
+        self.logger = LogGenerator.get_logger()
 
-    def clickaccount(self):
-        element = self.wait.until(EC.element_to_be_clickable((By.XPATH, self.lnk_account_xpth)))
-        element.click()
+    def click_account(self):
+        # Log the action and click the "Create an Account" link
+        self.logger.debug(f"Clicking create an account link")
+        self.driver.find_element(By.XPATH,self.lnk_account_xpath).click()
 
-    def clicksign(self):
-        print(f"Current URL: {self.driver.current_url}")
-        print("Looking for Sign In link...")
-        element = self.wait.until(EC.element_to_be_clickable((By.XPATH, self.lnk_sign_xpth)))
-        element.click()
-        print("Found Sign In link, clicking...")
+    def click_sign(self):
+        # Log the action and click the "Sign In" link
+        self.logger.debug(f"Clicking Sign in link")
+        self.driver.find_element(By.XPATH,self.lnk_sign_xpath).click()
