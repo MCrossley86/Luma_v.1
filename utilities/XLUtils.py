@@ -1,42 +1,28 @@
+# Import the necessary modules
 import openpyxl
 from openpyxl.styles import PatternFill
 
-def getRowCount(file,sheetName):
+def get_row_count(file,sheetName):
+    # Load the workbook, select the specified sheet and return max rows
     workbook = openpyxl.load_workbook(file)
     sheet = workbook[sheetName]
     return(sheet.max_row)
 
-def getColumnCount(file,sheetName):
+def get_column_count(file,sheetName):
+    # Load the workbook, select the specified sheet and return max columns
     workbook = openpyxl.load_workbook(file)
     sheet = workbook[sheetName]
     return(sheet.max_column)
 
-def readData(file,sheetName,rownum,columnno):
+def read_data(file,sheetName,rownum,columnno):
+    # Load the workbook, select the specified sheet and return the value of the cell
     workbook = openpyxl.load_workbook(file)
     sheet = workbook[sheetName]
     return sheet.cell(rownum,columnno).value
 
-def writeData(file,sheetName,rownum,columnno,data):
+def write_data(file,sheetName,rownum,columnno,data):
+    # Load the workbook, select the specified sheet, set the value of the cell with the given data and save the changes to the workbook
     workbook = openpyxl.load_workbook(file)
     sheet = workbook[sheetName]
     sheet.cell(rownum, columnno).value = data
-    workbook.save(file)
-
-def fillGreenColor(file,sheetName,rownum,columnno):
-    workbook = openpyxl.load_workbook(file)
-    sheet = workbook[sheetName]
-    greenFill = PatternFill(start_color='60b212',
-                       end_color='60b212',
-                       fill_type='solid')
-    sheet.cell(rownum,columnno).fill=greenFill
-    workbook.save(file)
-
-
-def fillRedColor(file,sheetName,rownum,columnno):
-    workbook = openpyxl.load_workbook(file)
-    sheet = workbook[sheetName]
-    redFill = PatternFill(start_color='ff0000',
-                       end_color='ff0000',
-                       fill_type='solid')
-    sheet.cell(rownum,columnno).fill=redFill
     workbook.save(file)

@@ -9,12 +9,12 @@ import os
 
 class TestAccountReg:
     # Get the URL from the config file and initialize the logger
-    baseURL = ReadConfig.getapplicationurl()
+    baseURL = ReadConfig.get_application_url()
     logger = LogGenerator.get_logger()
 
     @pytest.mark.sanity
     def test_account_reg(self, setup):
-        # Log the action and define and create a path to save screenshots
+        # Log the action, define and create a path to save screenshots
         self.logger.info("*** Test_001_Account_Registration Started ***")
         self.driver = setup
         screenshots_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'screenshots')

@@ -9,14 +9,14 @@ import os
 
 class TestLogout:
     # Get the URL, user email and password from the config file and initialize the logger
-    baseURL = ReadConfig.getapplicationurl()
-    user_email = ReadConfig.getuseremail()
-    password = ReadConfig.getpassword()
+    baseURL = ReadConfig.get_application_url()
+    user_email = ReadConfig.get_user_email()
+    password = ReadConfig.get_password()
     logger = LogGenerator.get_logger()
 
     @pytest.mark.sanity
     def test_logout(self,setup):
-        # Log the action and define and create a path to save screenshots
+        # Log the action, define and create a path to save screenshots
         self.logger.info("*** Test_003_Logout Started ***")
         self.driver = setup
         screenshots_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'screenshots')
@@ -25,6 +25,7 @@ class TestLogout:
 
         try:
             # Log the action and navigate to the main page
+            self.logger.info("*** Navigate to the main page ***")
             self.driver.get(self.baseURL)
             self.driver.maximize_window()
 
