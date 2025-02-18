@@ -8,7 +8,9 @@ class MyAccount:
     lnk_my_account_xpath = "//div[@aria-hidden='false']//a[normalize-space()='My Account']"
     lnk_my_wishlist_xpath = "//div[@aria-hidden='false']//a[normalize-space()='My Wish List']"
     lnk_sign_out_xpath = "//div[@aria-hidden='false']//a[normalize-space()='Sign Out']"
+    lnk_promo_xpath = "New Luma Yoga Collection"
     sign_out_conf = "//span[@class='base']"
+
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -34,6 +36,11 @@ class MyAccount:
         # Log the action and click the "Sign Out" link
         self.logger.debug(f"Clicking Sign Out link")
         self.driver.find_element(By.XPATH,self.lnk_sign_out_xpath).click()
+
+    def click_promo_link(self):
+        # Log the action and click the "New Luma Collection" link
+        self.logger.debug(f"Clicking new luma collection link")
+        self.driver.find_element(By.NAME,self.lnk_promo_xpath).click()
 
     def get_sign_out_msg(self):
         # Log the action and capture the "signed out" text
