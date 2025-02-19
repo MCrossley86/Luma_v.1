@@ -8,6 +8,7 @@ class EchoFit:
     echo_colour_blue = "//div[contains(@option-label,'Blue')]"
     echo_quantity = "//input[@id='qty']"
     echo_add_to_cart_btn = "//button[@id='product-addtocart-button']"
+    echo_conf_bar = "//div[@role='alert']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -33,3 +34,14 @@ class EchoFit:
         # Log the action and click on "add to cart" button
         self.logger.debug(f"Clicking on add to cart button")
         self.driver.find_element(By.XPATH,self.echo_add_to_cart_btn).click()
+
+    def conf_bar(self):
+        # Log the action and check the confirmation bar is displayed
+        self.logger.debug(f"Checking confirmation bar is displayed")
+        try:
+            element_displayed = self.driver.find_element(By.XPATH, self.echo_conf_bar).is_displayed()
+            print("Element displayed...")
+            return element_displayed
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return False

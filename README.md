@@ -71,13 +71,20 @@
     - Created a test case for logging out.
 
 17. **Automated Login DDT Test Case**
-    - Created a test case for data driven testing.
-    - **Note: There are some current issues which I am resolving**
+    - Developed test class for Data-Driven Testing (DDT) login.
+    - Created a test case to perform login using data from an Excel sheet.
+    - Iterated through multiple test cases in Excel, reading email, password, and expected result.
+    - Determined pass/fail status based on the expected result and logged the results.
+    - Asserted the final result based on the overall status of test cases.
+
+18. **Automated Adding To The Cart**
+    - Note: I'm currently working on this code
    
 **Future Projects**
     - Automate Test Cases for the following scenarios:
         - Validate login functionality - COMPLETE
         - Validate logout functionality - COMPLETE
+        - Validate the add to cart functionality - CURRENTLY WORKING ON
         - Validate reset password functionality
         - Validate search functionality 
         - Validate the wish list functionality
