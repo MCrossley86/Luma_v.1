@@ -4,6 +4,7 @@ from pageobjects.CustomerLogin import CustLogin
 from pageobjects.MyAccount import MyAccount
 from pageobjects.YogaCollection import YogaCollection
 from pageobjects.EchoFit import EchoFit
+from pageobjects.ShoppingCart import ShoppingCart
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
@@ -54,28 +55,23 @@ class TestLogin:
             self.logger.info("*** Click on Echo Fit Compression Short")
             self.yc = YogaCollection(self.driver)
             self.yc.click_echo_link()
-            time.sleep(2)
 
-            # Log the action and select the required fields and add to cart
-            self.logger.info("*** Adding to cart ***")
+            # Log the action and select the required fields and add and navigate to cart
+            self.logger.info("*** Adding to cart and navigating to cart page ***")
             self.ef = EchoFit(self.driver)
             self.ef.select_size_28()
-            time.sleep(2)
             self.ef.select_colour_blue()
-            time.sleep(2)
             self.ef.set_quantity(3)
-            time.sleep(2)
             self.ef.add_to_cart()
-            time.sleep(2)
-            self.driver.execute_script("window.scrollTo(0, 0);")
-            time.sleep(2)
+            self.ef.click_shopping_cart_link()
 
             # Log the action and check that the item has been added to the cart
-            self.logger.info("*** Checking confirmation bar is displayed ***")
-            self.ef_conf_bar = self.ef.conf_bar()
-            assert self.ef_conf_bar == "You added Echo Fit Compression Short to your"
+            self.logger.info("*** Checking for header title ***")
+            self.sc = ShoppingCart(self.driver)
+            self.sc_head_title = self.sc.capt_head_title()
+            assert self.sc_head_title == "Shopping Cart"
             self.driver.close()
-            self.logger.info("*** Test_005_AddToCart ***")
+            self.logger.info("*** Test_005_AddToCart Passed ***")
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure

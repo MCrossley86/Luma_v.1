@@ -78,6 +78,8 @@
     - Asserted the final result based on the overall status of test cases.
 
 18. **Automated Adding To The Cart**
+    - Developed the following page object classes "EchoFit", "ShoppingCart" and "YogaCollection"
+    - Created test case "Test_005_AddToCart" to check items are added to the cart 
     - Note: I'm currently working on this code
    
 **Future Projects**
