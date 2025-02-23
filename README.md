@@ -81,6 +81,9 @@
     - Developed the following page object classes "EchoFit", "ShoppingCart" and "YogaCollection"
     - Created test case "Test_005_AddToCart" to check items are added to the cart 
     - Note: I'm currently working on this code
+
+19. **Current Project**
+    - Update and build on current manual test cases from 24/Feb - 28/Feb
    
 **Future Projects**
     - Automate Test Cases for the following scenarios:
