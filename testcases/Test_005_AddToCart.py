@@ -11,7 +11,7 @@ import pytest
 import os
 import time
 
-class TestLogin:
+class TestAddToCart:
     # Get the URL, user email and password from the config file and initialize the logger
     baseURL = ReadConfig.get_application_url()
     user_email = ReadConfig.get_user_email()
