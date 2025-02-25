@@ -61,6 +61,7 @@ class TestAddToCart:
             self.ef = EchoFit(self.driver)
             self.ef.select_size_28()
             self.ef.select_colour_blue()
+            self.ef.clear_quantity_field()
             self.ef.set_quantity(3)
             self.ef.add_to_cart()
             self.ef.click_shopping_cart_link()

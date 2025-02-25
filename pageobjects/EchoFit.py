@@ -25,6 +25,11 @@ class EchoFit:
         self.logger.debug(f"Clicking on blue")
         self.driver.find_element(By.XPATH,self.echo_colour_blue).click()
 
+    def clear_quantity_field(self):
+        # Log the action and clear the email field
+        self.logger.debug(f"Clearing email")
+        self.driver.find_element(By.XPATH, self.echo_quantity).clear()
+
     def set_quantity(self, quantity):
         # Log the action and the quantity in the corresponding field
         self.logger.debug(f"Setting quantity: {quantity}")
