@@ -64,23 +64,22 @@
 
 15. **Automated Login Test Case**
     - Developed page object class for the login "CustomerLogin".
-    - Created a test case for logging in.
+    - Created a test case "Test_002_Login" to check that a user can log in.
 
 16. **Automated Logout Test Case**
     - Developed page object class for the logout "MyAccount".
-    - Created a test case for logging out.
+    - Created a test case "Test_003_Logout" to check that a user can logout.
 
 17. **Automated Login DDT Test Case**
     - Developed test class for Data-Driven Testing (DDT) login.
-    - Created a test case to perform login using data from an Excel sheet.
+    - Created a test case "Test_004_Login_DDT" to perform login using data from an Excel sheet.
     - Iterated through multiple test cases in Excel, reading email, password, and expected result.
     - Determined pass/fail status based on the expected result and logged the results.
     - Asserted the final result based on the overall status of test cases.
 
 18. **Automated Adding To The Cart**
     - Developed the following page object classes "EchoFit", "ShoppingCart" and "YogaCollection"
-    - Created test case "Test_005_AddToCart" to check items are added to the cart 
-    - Note: I'm currently working on this code
+    - Created test case "Test_005_AddToCart" to check that a user can add items to a cart. 
 
 19. **Current Project**
     - Update and build on current manual test cases from 24/Feb - 28/Feb
