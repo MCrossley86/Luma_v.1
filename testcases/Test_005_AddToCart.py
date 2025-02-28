@@ -9,7 +9,6 @@ from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
 import os
-import time
 
 class TestAddToCart:
     # Get the URL, user email and password from the config file and initialize the logger
@@ -55,22 +54,16 @@ class TestAddToCart:
             self.logger.info("*** Click on Echo Fit Compression Short")
             self.yc = YogaCollection(self.driver)
             self.yc.click_echo_link()
-            time.sleep(2)
 
             # Log the action and select the required fields and add and navigate to cart
             self.logger.info("*** Adding to cart and navigating to cart page ***")
             self.ef = EchoFit(self.driver)
             self.ef.select_size_28()
-            time.sleep(2)
             self.ef.select_colour_blue()
-            time.sleep(2)
             self.ef.clear_quantity_field()
             self.ef.set_quantity(3)
-            time.sleep(2)
             self.ef.add_to_cart()
-            time.sleep(2)
             self.ef.click_shopping_cart_link()
-            time.sleep(2)
 
             # Log the action and check that the item has been added to the cart
             self.logger.info("*** Checking for header title ***")
