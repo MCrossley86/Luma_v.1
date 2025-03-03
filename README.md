@@ -82,13 +82,15 @@
     - Created test case "Test_005_AddToCart" to check that a user can add items to a cart. 
 
 19. **Current Project**
-    - Update and build on current manual test cases from 24/Feb - 28/Feb
+    - Validate COmpare Functionality
+    - **Current issues I'm working on: Clicking on "compare" icon through overlay**
    
 **Future Projects**
     - Automate Test Cases for the following scenarios:
         - Validate login functionality - COMPLETE
         - Validate logout functionality - COMPLETE
-        - Validate the add to cart functionality - CURRENTLY WORKING ON
+        - Validate the add to cart functionality - COMPLETE
+        - Validate compare functionality - CURRENT PROJECT
         - Validate reset password functionality
         - Validate search functionality 
         - Validate the wish list functionality
