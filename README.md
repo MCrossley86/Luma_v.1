@@ -82,7 +82,7 @@
     - Created test case "Test_005_AddToCart" to check that a user can add items to a cart. 
 
 19. **Current Project**
-    - Validate COmpare Functionality
+    - Validate Compare Functionality
     - **Current issues I'm working on: Clicking on "compare" icon through overlay**
    
 **Future Projects**

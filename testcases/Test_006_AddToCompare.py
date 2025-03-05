@@ -3,13 +3,13 @@ from pageobjects.HomePage import MainPage
 from pageobjects.CustomerLogin import CustLogin
 from pageobjects.MyAccount import MyAccount
 from pageobjects.YogaCollection import YogaCollection
+from pageobjects.CompareProducts import CompareProducts
 from pageobjects.EchoFit import EchoFit
 from pageobjects.ShoppingCart import ShoppingCart
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
 import os
-import time
 
 class TestAddToCompare:
     # Get the URL, user email and password from the config file and initialize the logger
@@ -48,18 +48,23 @@ class TestAddToCompare:
             # Log the action and click on the Yoga collection link
             self.logger.info("*** Click on the Yoga collection link ***")
             self.ma = MyAccount(self.driver)
-            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight/4);")
             self.ma.click_promo_link()
 
             # Log the action and select Echo Fit Compression Short
             self.logger.info("*** Click on Echo Fit Compression Short")
             self.yc = YogaCollection(self.driver)
-            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight/4);")
-            time.sleep(2)
             self.yc.click_echo_compare()
-            time.sleep(2)
             self.yc.click_gwen_compare()
-            time.sleep(2)
+            self.yc.comparison_list_lnk()
+
+            # Log the action and check for the header title
+            self.logger.info("*** Click on Echo Fit Compression Short")
+            self.cp = CompareProducts(self.driver)
+            self.logger.info("*** Check for header title ***")
+            self.comp_head = self.cp.compare_header()
+            assert self.comp_head == "Compare Products"
+            self.driver.close()
+            self.logger.info("*** Test_006_AddToComp Passed ***")
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure
