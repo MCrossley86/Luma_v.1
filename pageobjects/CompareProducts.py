@@ -13,7 +13,7 @@ class CompareProducts:
 
     def compare_header(self):
         # Log the action and capture the "Compare Products" text
-        self.logger.debug(f"Capturing the signed out header text")
+        self.logger.debug(f"Capturing the Compare Products header text")
         try:
             return self.driver.find_element(By.XPATH,self.comp_head).text
         except Exception as e:

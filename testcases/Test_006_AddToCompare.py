@@ -50,15 +50,15 @@ class TestAddToCompare:
             self.ma = MyAccount(self.driver)
             self.ma.click_promo_link()
 
-            # Log the action and select Echo Fit Compression Short
-            self.logger.info("*** Click on Echo Fit Compression Short")
+            # Log the action and click on compare icons for Echo and Gwen shorts
+            self.logger.info("*** Click on compare icons for Echo and Gwen shorts")
             self.yc = YogaCollection(self.driver)
             self.yc.click_echo_compare()
             self.yc.click_gwen_compare()
             self.yc.comparison_list_lnk()
 
             # Log the action and check for the header title
-            self.logger.info("*** Click on Echo Fit Compression Short")
+            self.logger.info("*** Navigate to Comparison List webpage ")
             self.cp = CompareProducts(self.driver)
             self.logger.info("*** Check for header title ***")
             self.comp_head = self.cp.compare_header()
