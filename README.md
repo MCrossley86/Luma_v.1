@@ -79,21 +79,28 @@
 
 18. **Automated Adding To The Cart**
     - Developed the following page object classes "EchoFit", "ShoppingCart" and "YogaCollection"
-    - Created test case "Test_005_AddToCart" to check that a user can add items to a cart. 
+    - Created test case "Test_005_AddToCart" to check that a user can add items to a cart.
+
+19. **Automated Adding To Compare**
+    - Developed the following page object classes "CompareProducts"
+    - Created test case "Test_006_AddToCompare" to check that a user can add items to list and compare. 
+
+20. **Automated Adding To Wish List**
+    - Developed the following page object classes "WishList"
+    - Created test case "Test_007_AddToWishList" to check that a user can add items to a Wish List. 
 
 19. **Current Project**
-    - Validate Compare Functionality
-    - **Current issues I'm working on: Clicking on "compare" icon through overlay**
+    - Streamline code
    
 **Future Projects**
     - Automate Test Cases for the following scenarios:
         - Validate login functionality - COMPLETE
         - Validate logout functionality - COMPLETE
         - Validate the add to cart functionality - COMPLETE
-        - Validate compare functionality - CURRENT PROJECT
+        - Validate compare functionality - COMPLETE
+        - Validate the wish list functionality - COMPLETE
         - Validate reset password functionality
         - Validate search functionality 
-        - Validate the wish list functionality
         - Validate Home Page functionality
         - Validate 'What's New' functionality
         - Validate 'Women' functionality
