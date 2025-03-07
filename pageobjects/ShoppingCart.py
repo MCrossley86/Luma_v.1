@@ -1,5 +1,7 @@
 # Import the necessary modules
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 from utilities.CustomLog import LogGenerator
 
 class ShoppingCart:
@@ -13,11 +15,18 @@ class ShoppingCart:
         self.driver = driver
         self.logger = LogGenerator.get_logger()
 
+    def wait_for_element(self, locator):
+        # Method to wait for element before any action is committed
+        self.logger.debug(f"Waiting for the element with locator: {locator}")
+        return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.XPATH, locator))
+            )
+
     def capt_head_title(self):
         # Log the action and capture the header text
         self.logger.debug(f"Capturing header text")
         try:
-            text_capture = self.driver.find_element(By.XPATH, self.shop_cart_head).text
+            text_capture = self.wait_for_element(self.shop_cart_head).text
+            # text_capture = self.driver.find_element(By.XPATH, self.shop_cart_head).text
             print("Text captured")
             return text_capture
         except Exception as e:
@@ -28,7 +37,8 @@ class ShoppingCart:
         # Log the action and check the header is displayed
         self.logger.debug(f"Checking item has been added")
         try:
-            element_displayed = self.driver.find_element(By.XPATH, self.shop_cart_item).is_displayed()
+            element_displayed = self.wait_for_element(self.shop_cart_item).is_displayed()
+            # element_displayed = self.driver.find_element(By.XPATH, self.shop_cart_item).is_displayed()
             print("Item added...")
             return element_displayed
         except Exception as e:
