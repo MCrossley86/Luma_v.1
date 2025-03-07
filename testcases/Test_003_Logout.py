@@ -51,6 +51,7 @@ class TestLogout:
             self.logger.info("*** Check for sign out message ***")
             self.conf_sign_out = self.ma.get_sign_out_msg()
             assert self.conf_sign_out == "You are signed out"
+            self.driver.close()
             self.logger.info("*** Test_003_Logout Passed ***")
 
         except Exception as e:
