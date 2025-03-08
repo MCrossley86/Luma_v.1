@@ -27,38 +27,32 @@ class CustLogin:
         # Log the action and enter the email in the corresponding field
         self.logger.debug(f"Entering email: {email}")
         self.wait_for_element(self.fld_email_xpath).send_keys(email)
-        # self.driver.find_element(By.XPATH,self.fld_email_xpath).send_keys(email)
 
     def enter_pwd(self, pwd):
         # Log the action and enter the password in the corresponding field
         self.logger.debug(f"Entering password: {pwd}")
         self.wait_for_element(self.fld_pwd_xpath).send_keys(pwd)
-        # self.driver.find_element(By.XPATH,self.fld_pwd_xpath).send_keys(pwd)
 
     def click_signin(self):
         # Log the action and click the "Sign in" button
         self.logger.debug(f"Clicking sign in")
         self.wait_for_element(self.fld_sign_xpath).click()
-        # self.driver.find_element(By.XPATH, self.fld_sign_xpath).click()
 
     def clear_email_field(self):
         # Log the action and clear the email field
         self.logger.debug(f"Clearing email")
         self.wait_for_element(self.fld_email_xpath).clear()
-        # self.driver.find_element(By.XPATH, self.fld_email_xpath).clear()
 
     def clear_password_field(self):
         # Log the action and clear the password field
         self.logger.debug(f"Clearing password")
         self.wait_for_element(self.fld_pwd_xpath).clear()
-        # self.driver.find_element(By.XPATH, self.fld_pwd_xpath).clear()
 
     def get_home_page_title(self):
         # Log the action and capture the header text
         self.logger.debug(f"Capturing header text")
         try:
             text_capture = self.wait_for_element(self.txt_conf_title).text
-            # text_capture = self.driver.find_element(By.XPATH, self.txt_conf_title).text
             print("Text captured")
             return text_capture
         except Exception as e:
@@ -70,7 +64,6 @@ class CustLogin:
         self.logger.debug(f"Checking header is displayed")
         try:
             element_displayed = self.wait_for_element(self.msg_my_account_xpath).is_displayed()
-            # element_displayed = self.driver.find_element(By.XPATH, self.msg_my_account_xpath).is_displayed()
             print("Element displayed...")
             return element_displayed
         except Exception as e:

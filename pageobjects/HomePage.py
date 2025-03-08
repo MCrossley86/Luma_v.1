@@ -24,10 +24,8 @@ class MainPage:
         # Log the action and click the "Create an Account" link
         self.logger.debug(f"Clicking create an account link")
         self.wait_for_element(self.lnk_account_xpath).click()
-        # self.driver.find_element(By.XPATH,self.lnk_account_xpath).click()
 
     def click_sign(self):
         # Log the action and click the "Sign In" link
         self.logger.debug(f"Clicking Sign in link")
         self.wait_for_element(self.lnk_sign_xpath).click()
-        # self.driver.find_element(By.XPATH,self.lnk_sign_xpath).click()

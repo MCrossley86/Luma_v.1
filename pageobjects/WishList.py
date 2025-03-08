@@ -24,7 +24,6 @@ class MyWishList:
         self.logger.debug(f"Capturing the My Wish List header text")
         try:
             return self.wait_for_element(self.wish_list_head).text
-            # return self.driver.find_element(By.XPATH, self.wish_list_head).text
         except Exception as e:
             print(f"An error occurred: {e}")
             return False

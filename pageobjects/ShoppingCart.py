@@ -26,7 +26,6 @@ class ShoppingCart:
         self.logger.debug(f"Capturing header text")
         try:
             text_capture = self.wait_for_element(self.shop_cart_head).text
-            # text_capture = self.driver.find_element(By.XPATH, self.shop_cart_head).text
             print("Text captured")
             return text_capture
         except Exception as e:
@@ -38,7 +37,6 @@ class ShoppingCart:
         self.logger.debug(f"Checking item has been added")
         try:
             element_displayed = self.wait_for_element(self.shop_cart_item).is_displayed()
-            # element_displayed = self.driver.find_element(By.XPATH, self.shop_cart_item).is_displayed()
             print("Item added...")
             return element_displayed
         except Exception as e:
