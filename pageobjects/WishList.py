@@ -1,8 +1,6 @@
 # Import the necessary modules
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
 from utilities.CustomLog import LogGenerator
+from utilities.WaitForElements import wait_for_element
 
 class MyWishList:
     # Define locators for webpage elements
@@ -13,17 +11,11 @@ class MyWishList:
         self.driver = driver
         self.logger = LogGenerator.get_logger()
 
-    def wait_for_element(self, locator):
-        # Method to wait for element before any action is committed
-        self.logger.debug(f"Waiting for the element with locator: {locator}")
-        return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.XPATH, locator))
-            )
-
     def wish_list_header(self):
         # Log the action and capture the "My Wish List" text
         self.logger.debug(f"Capturing the My Wish List header text")
         try:
-            return self.wait_for_element(self.wish_list_head).text
+            return wait_for_element(self.driver, self.wish_list_head).text
         except Exception as e:
             print(f"An error occurred: {e}")
             return False
