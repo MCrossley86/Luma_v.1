@@ -1,7 +1,8 @@
 # Import the necessary modules
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as ec
+from utilities.WaitForElements import wait_for_element
 from selenium.webdriver import ActionChains
 from utilities.CustomLog import LogGenerator
 
@@ -23,48 +24,48 @@ class YogaCollection:
         self.driver = driver
         self.logger = LogGenerator.get_logger()
 
-    def wait_for_element(self, locator):
-        # Method to wait for element before any action is committed
-        self.logger.debug(f"Waiting for the element with locator: {locator}")
-        return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.XPATH, locator))
-            )
+    # def wait_for_element(self, locator):
+    #     # Method to wait for element before any action is committed
+    #     self.logger.debug(f"Waiting for the element with locator: {locator}")
+    #     return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.XPATH, locator))
+    #         )
 
     def click_echo_link(self):
         # Log the action and click on the designated link
         self.logger.debug(f"Clicking on the echo fit image")
-        self.wait_for_element(self.echo_lnk).click()
+        wait_for_element(self.driver, self.echo_lnk).click()
 
     def add_echo_to_cart(self):
         # Log the action and click "add to cart" in the iframe
         self.logger.debug(f"Clicking on echo fit add to cart")
-        self.wait_for_element(self.echo_add_to_cart).click()
+        wait_for_element(self.driver, self.echo_add_to_cart).click()
 
     def click_echo_compare(self):
         # Log the action and click on "add to compare" icon
         self.logger.debug(f"Clicking on add to compare icon")
         act = ActionChains(self.driver)
-        hover_element = self.wait_for_element(self.echo_hover)
-        comp_element = self.wait_for_element(self.echo_add_to_comp)
+        hover_element = wait_for_element(self.driver, self.echo_hover)
+        comp_element = wait_for_element(self.driver, self.echo_add_to_comp)
         act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
 
     def click_gwen_compare(self):
         # Log the action and click on "add to compare" icon
         self.logger.debug(f"Clicking on add to compare icon")
         act = ActionChains(self.driver)
-        hover_element = self.wait_for_element(self.gwen_hover)
-        comp_element = self.wait_for_element(self.gwen_add_to_comp)
+        hover_element = wait_for_element(self.driver, self.gwen_hover)
+        comp_element = wait_for_element(self.driver, self.gwen_add_to_comp)
         act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
 
     def click_fiona_wishlist(self):
         # Log the action and click on "add to wishlist" icon
         self.logger.debug(f"Clicking on add to wishlist icon")
         act = ActionChains(self.driver)
-        hover_element = self.wait_for_element(self.fiona_hover)
-        comp_element = self.wait_for_element(self.fiona_add_to_wishlist)
+        hover_element = wait_for_element(self.driver, self.fiona_hover)
+        comp_element = wait_for_element(self.driver, self.fiona_add_to_wishlist)
         act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
 
     def comparison_list_lnk(self):
         # Log the action and click on "comparison list" link
         self.logger.debug(f"Clicking on comparison list link")
-        self.wait_for_element(self.comparison_lnk).click()
+        wait_for_element(self.driver, self.comparison_lnk).click()
 
