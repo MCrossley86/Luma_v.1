@@ -68,7 +68,7 @@ class TestAddToCart:
             # Log the action and check that the item has been added to the cart
             self.logger.info("*** Navigate to Shopping Cart webpage ")
             self.sc = ShoppingCart(self.driver)
-            self.logger.info("*** Checking for header title ***")
+            self.logger.info("*** Checking for item in the cart ***")
             self.sc_added_item = self.sc.capt_added_item()
             assert self.sc_added_item
             self.driver.close()
