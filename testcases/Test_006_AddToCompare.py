@@ -61,8 +61,9 @@ class TestAddToCompare:
             self.logger.info("*** Navigate to Comparison List webpage ")
             self.cp = CompareProducts(self.driver)
             self.logger.info("*** Check for header title ***")
-            self.comp_head = self.cp.compare_header()
-            assert self.comp_head == "Compare Products"
+            self.comp_gwen = self.cp.compare_gwen_short_displayed()
+            self.comp_echo =self.cp.compare_echo_short_displayed()
+            assert self.comp_echo and self.comp_gwen
             self.driver.close()
             self.logger.info("*** Test_006_AddToComp Passed ***")
 
