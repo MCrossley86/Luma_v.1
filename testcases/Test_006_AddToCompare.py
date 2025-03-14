@@ -51,21 +51,20 @@ class TestAddToCompare:
             self.ma.click_promo_link()
 
             # Log the action and click on compare icons for Echo and Gwen shorts
-            self.logger.info("*** Click on compare icons for Echo and Gwen shorts")
+            self.logger.info("*** Click on compare icons for Echo and Gwen shorts ***")
             self.yc = YogaCollection(self.driver)
             self.yc.click_echo_compare()
             self.yc.click_gwen_compare()
             self.yc.comparison_list_lnk()
 
-            # Log the action and check for the header title
-            self.logger.info("*** Navigate to Comparison List webpage ")
+            # Log the action and check for the header title and compared items
+            self.logger.info("*** Check to see if header and items displayed ***")
             self.cp = CompareProducts(self.driver)
-            self.logger.info("*** Check for header title ***")
+            self.comp_head = self.cp.compare_header()
+            assert self.comp_head == "Compare Products"
             self.comp_gwen = self.cp.compare_gwen_short_displayed()
             self.comp_echo =self.cp.compare_echo_short_displayed()
             assert self.comp_echo and self.comp_gwen
-            self.driver.close()
-            self.logger.info("*** Test_006_AddToComp Passed ***")
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure
