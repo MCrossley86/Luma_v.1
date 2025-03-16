@@ -59,7 +59,8 @@ class TestAddToCompare:
             self.wl = MyWishList(self.driver)
             self.logger.info("*** Check for header title ***")
             self.wish_head = self.wl.wish_list_header()
-            assert self.wish_head == "My Wish List"
+            self.wish_list = self.wl.wish_list_fiona_short()
+            assert self.wish_head == "My Wish List" and self.wish_list
             self.driver.close()
             self.logger.info("*** Test_007_AddToWishList Passed ***")
 

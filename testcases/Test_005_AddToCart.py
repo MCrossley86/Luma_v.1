@@ -69,8 +69,9 @@ class TestAddToCart:
             self.logger.info("*** Navigate to Shopping Cart webpage ")
             self.sc = ShoppingCart(self.driver)
             self.logger.info("*** Checking for item in the cart ***")
+            self.head_title = self.sc.capt_head_title()
             self.sc_added_item = self.sc.capt_added_item()
-            assert self.sc_added_item
+            assert self.head_title == "Shopping Cart" and self.sc_added_item
             self.driver.close()
             self.logger.info("*** Test_005_AddToCart Passed ***")
 
