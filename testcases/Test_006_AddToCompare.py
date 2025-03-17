@@ -61,10 +61,9 @@ class TestAddToCompare:
             self.logger.info("*** Check to see if header and items displayed ***")
             self.cp = CompareProducts(self.driver)
             self.comp_head = self.cp.compare_header()
-            assert self.comp_head == "Compare Products"
             self.comp_gwen = self.cp.compare_gwen_short_displayed()
-            self.comp_echo =self.cp.compare_echo_short_displayed()
-            assert self.comp_echo and self.comp_gwen
+            self.comp_echo = self.cp.compare_echo_short_displayed()
+            assert self.comp_head == "Compare Products" and self.comp_echo and self.comp_gwen
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure

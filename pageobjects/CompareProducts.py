@@ -6,7 +6,7 @@ class CompareProducts:
     # Define locators for webpage elements
     comp_head = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='Compare Products']"
     comp_gwen = "//a[normalize-space()='Gwen Drawstring Bike Short']"
-    comp_echo = "//a[normalize-space()='Echo Fit Compression Short']"
+    comp_echo = "//a[@title='Echo Fit Compression Short'][normalize-space()='Echo Fit Compression Short']"
 
     def __init__(self, driver):
         # Initialize the driver and logger

@@ -45,6 +45,3 @@ class LogGenerator:
         logging.debug("Setting logger propagation to True")
         logger.propagate = True
         return logger
-
-
-
