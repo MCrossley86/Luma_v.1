@@ -7,6 +7,7 @@ class ShoppingCart:
     shop_cart_head = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='Shopping Cart']"
     shop_cart_item = "//td[@class='col item']//a[normalize-space()='Echo Fit Compression Short']"
     shop_cart_item_tank = "//td[@class='col item']//a[normalize-space()='Cassius Sparring Tank']"
+    shop_cart_checkout = "//button[@data-role='proceed-to-checkout']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -34,3 +35,9 @@ class ShoppingCart:
         except Exception as e:
             print(f"An error occurred: {e}")
             return False
+
+    def click_checkout(self):
+        # Log the action and click the "Checkout" button
+        self.logger.debug(f"Clicking Checkout button")
+        wait_for_element(self.driver, self.shop_cart_checkout).click()
+
