@@ -90,7 +90,8 @@
     - Created test case "Test_007_AddToWishList" to check that a user can add items to a Wish List. 
 
 19. **Current Project**
-    - Streamline code
+    - Developing ordering an item: test_008
+    - **Current issues capturing the header text**
    
 **Future Projects**
     - Automate Test Cases for the following scenarios:
@@ -109,10 +110,8 @@
         - Validate 'Training' functionality
         - Validate 'Sale' functionality
         - Validate 'My Account' functionality
-        - Validate the add to cart functionality
             - My Account
             - My Wish List
             - Sign Out
-        - Validate the shopping cart functionality 
         - Verify checkout functionality
     - Expand on the login page by creating a data-driven test

@@ -66,9 +66,8 @@ class TestAddToCart:
             self.ef.click_shopping_cart_link()
 
             # Log the action and check that the item has been added to the cart
-            self.logger.info("*** Navigate to Shopping Cart webpage ")
+            self.logger.info("*** Navigate to Shopping Cart webpage and check for the item in the cart ")
             self.sc = ShoppingCart(self.driver)
-            self.logger.info("*** Checking for item in the cart ***")
             self.head_title = self.sc.capt_head_title()
             self.sc_added_item = self.sc.capt_added_item()
             assert self.head_title == "Shopping Cart" and self.sc_added_item
