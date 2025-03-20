@@ -4,7 +4,7 @@ from utilities.CustomLog import LogGenerator
 
 class OrderConf:
     # Define locators for webpage elements
-    order_conf = "//span[@class='base']"
+    order_conf = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='Thank you for your purchase!']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
