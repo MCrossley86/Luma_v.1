@@ -1,4 +1,4 @@
-### Summary of Hybrid-Driven Framework Development
+### Summary of Keyword-Driven Framework Development
 
 1. **Test Scenarios and Cases**
    - Wrote test scenarios and cases for account registration.
@@ -78,20 +78,25 @@
     - Asserted the final result based on the overall status of test cases.
 
 18. **Automated Adding To The Cart**
-    - Developed the following page object classes "EchoFit", "ShoppingCart" and "YogaCollection"
+    - Developed the following page object files "EchoFit", "ShoppingCart" and "YogaCollection"
     - Created test case "Test_005_AddToCart" to check that a user can add items to a cart.
 
 19. **Automated Adding To Compare**
-    - Developed the following page object classes "CompareProducts"
+    - Developed the following page object files "CompareProducts"
     - Created test case "Test_006_AddToCompare" to check that a user can add items to list and compare. 
 
 20. **Automated Adding To Wish List**
-    - Developed the following page object classes "WishList"
+    - Developed the following page object files "WishList"
     - Created test case "Test_007_AddToWishList" to check that a user can add items to a Wish List. 
 
-19. **Current Project**
-    - Developing ordering an item: test_008
-    - **Current issues capturing the header text**
+21. **Automated Checking Out Items**
+    - Developed the page object files "Order Summary" and "Order Confirmation"
+    - Created test case "Test_008_OrderItem" to check that a user can purchase an item
+
+22. **Current Project**
+    - Investigate why automation.log isn't recording all info logs.  
+    - Clearing items from "Wish List", "Cart" and "Compare"
+    - **Note: Prepares future tests cases**
    
 **Future Projects**
     - Automate Test Cases for the following scenarios:
@@ -100,6 +105,7 @@
         - Validate the add to cart functionality - COMPLETE
         - Validate compare functionality - COMPLETE
         - Validate the wish list functionality - COMPLETE
+        - Verify checkout functionality - COMPLETE
         - Validate reset password functionality
         - Validate search functionality 
         - Validate Home Page functionality
@@ -113,5 +119,4 @@
             - My Account
             - My Wish List
             - Sign Out
-        - Verify checkout functionality
-    - Expand on the login page by creating a data-driven test
+        - Expand on the login page by creating a data-driven test
