@@ -64,6 +64,8 @@ class TestAddToCompare:
             self.comp_gwen = self.cp.compare_gwen_short_displayed()
             self.comp_echo = self.cp.compare_echo_short_displayed()
             assert self.comp_head == "Compare Products" and self.comp_echo and self.comp_gwen
+            self.driver.close()
+            self.logger.info("*** Test_006_AddToComp Passed ***")
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure
