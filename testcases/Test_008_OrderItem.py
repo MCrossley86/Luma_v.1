@@ -22,7 +22,7 @@ class TestAddToCart:
     @pytest.mark.sanity
     def test_order_item(self, setup):
         # Log the action, define and create a path to save screenshots
-        self.logger.info("*** Test_008_OrderIemt started ***")
+        self.logger.info("*** Test_008_OrderItem started ***")
         self.driver = setup
         screenshots_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'screenshots')
         if not os.path.exists(screenshots_path):
