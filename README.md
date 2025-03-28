@@ -60,7 +60,7 @@
 14. **Continuous Integration**
     - Ran the tests on Jenkins.
 
-**Continuous Integration**
+    **Continuous Integration**
 
 15. **Automated Login Test Case**
     - Developed page object class for the login "CustomerLogin".
@@ -68,7 +68,7 @@
 
 16. **Automated Logout Test Case**
     - Developed page object class for the logout "MyAccount".
-    - Created a test case "Test_003_Logout" to check that a user can logout.
+    - Created a test case "Test_003_Logout" to check that a user can log out.
 
 17. **Automated Login DDT Test Case**
     - Developed test class for Data-Driven Testing (DDT) login.
