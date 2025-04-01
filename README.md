@@ -94,10 +94,9 @@
     - Created test case "Test_008_OrderItem" to check that a user can purchase an item
 
 22. **Current Project**
-    - Investigate why automation.log isn't recording all info logs.  
     - Clearing items from "Wish List", "Cart" and "Compare"
-    - **Note: Prepares future tests cases**
-   
+    - Validate the reset password functionality
+       
 **Future Projects**
     - Automate Test Cases for the following scenarios:
         - Validate login functionality - COMPLETE
