@@ -8,8 +8,10 @@ class CustLogin:
     fld_email_xpath = "//input[@id='email']"
     fld_pwd_xpath = "//fieldset[@class='fieldset login']//input[@id='pass']"
     fld_sign_xpath = "//fieldset[@class='fieldset login']//button[@id='send2']"
+    fld_forgot = "(//span[contains(text(),'Forgot Your Password?')])[1]"
     txt_conf_title = "//span[@class='base']"
     msg_my_account_xpath = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='Home Page']"
+    msg_reset_pwd = "//div[@class='message-success success message']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -30,6 +32,10 @@ class CustLogin:
         # Log the action and click the "Sign in" button
         self.logger.debug(f"Clicking sign in")
         wait_for_element(self.driver, self.fld_sign_xpath).click()
+
+    def click_forgot_pwd(self):
+        self.logger.debug(f"Clicking Forgot Password")
+        wait_for_element(self.driver, self.fld_forgot).click()
 
     def clear_email_field(self):
         # Log the action and clear the email field
@@ -62,3 +68,16 @@ class CustLogin:
         except Exception as e:
             print(f"An error occurred: {e}")
             return False
+
+    def pwd_reset_conf(self):
+        # Log the action and check the password reset message is displayed
+        self.logger.debug(f"Checking the message is displayed")
+        try:
+            element_displayed = wait_for_element(self.driver, self.msg_reset_pwd).is_displayed()
+            print("Element displayed...")
+            return element_displayed
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return False
+
+

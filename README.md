@@ -93,29 +93,28 @@
     - Developed the page object files "Order Summary" and "Order Confirmation"
     - Created test case "Test_008_OrderItem" to check that a user can purchase an item
 
-22. **Current Project**
+22. **Automated Resetting Password**
+    - Developed the page object files "Forgot Your Password"
+    - Created test case "Test_009_ResetPassword" to check that a user can reset their password
+
+##. **Current Project**
     - Clearing items from "Wish List", "Cart" and "Compare"
-    - Validate the reset password functionality
        
 **Future Projects**
-    - Automate Test Cases for the following scenarios:
-        - Validate login functionality - COMPLETE
-        - Validate logout functionality - COMPLETE
-        - Validate the add to cart functionality - COMPLETE
-        - Validate compare functionality - COMPLETE
-        - Validate the wish list functionality - COMPLETE
-        - Verify checkout functionality - COMPLETE
-        - Validate reset password functionality
-        - Validate search functionality 
-        - Validate Home Page functionality
-        - Validate 'What's New' functionality
-        - Validate 'Women' functionality
-        - Validate 'Men' functionality
-        - Validate 'Gear' functionality
-        - Validate 'Training' functionality
-        - Validate 'Sale' functionality
-        - Validate 'My Account' functionality
-            - My Account
-            - My Wish List
-            - Sign Out
-        - Expand on the login page by creating a data-driven test
+    - Validate login functionality - COMPLETE
+    - Validate logout functionality - COMPLETE
+    - Validate the add to cart functionality - COMPLETE
+    - Validate compare functionality - COMPLETE
+    - Validate the wish list functionality - COMPLETE
+    - Verify checkout functionality - COMPLETE
+    - Validate reset password functionality - COMPLETE
+    - Validate search functionality 
+    - Validate Home Page functionality
+    - Validate 'What's New' functionality
+    - Validate 'Women' functionality
+    - Validate 'Men' functionality
+    - Validate 'Gear' functionality
+    - Validate 'Training' functionality
+    - Validate 'Sale' functionality
+    - Validate 'My Account' functionality
+    - Expand on the login page by creating a data-driven test
