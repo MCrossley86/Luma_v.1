@@ -2,10 +2,13 @@
 from pageobjects.HomePage import MainPage
 from pageobjects.CustomerLogin import CustLogin
 from pageobjects.ForgotYourPassword import ForgotPwd
+from pageobjects.Gmail import GmailAccount
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
 import os
+import imaplib
+import time
 
 class TestResetPwd:
     # Get the URL, user email and password from the config file and initialize the logger
@@ -13,6 +16,7 @@ class TestResetPwd:
     user_email = ReadConfig.get_user_email()
     password = ReadConfig.get_password()
     logger = LogGenerator.get_logger()
+    imap_url = "imap.gmail.com"
 
     @pytest.mark.sanity
     def test_login(self, setup):
@@ -48,6 +52,27 @@ class TestResetPwd:
             # Log the action and check for the green confirmation bar
             self.logger.info("*** Check for the confirmation bar ***")
             assert self.cl.pwd_reset_conf()
+            time.sleep(2)
+
+            # Check the email for the link
+            self.logger.info("*** Check for the email link ***")
+            self.driver.execute_script("window.open('');")
+            time.sleep(2)
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            self.driver.get("https://mail.google.com")
+            time.sleep(2)
+            self.ga = GmailAccount(self.driver)
+            self.ga.enter_email(self.user_email)
+            time.sleep(2)
+            self.ga.click_next()
+            self.ga.enter_pwd(self.password)
+            time.sleep(2)
+            self.ga.click_next()
+            time.sleep(2)
+            self.ga.click_not_now()
+            time.sleep(2)
+            self.ga.click_save()
+            time.sleep(4)
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure

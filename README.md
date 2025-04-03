@@ -99,6 +99,7 @@
 
 ##. **Current Project**
     - Clearing items from "Wish List", "Cart" and "Compare"
+    - Opening up a gmail account to check for reset links
        
 **Future Projects**
     - Validate login functionality - COMPLETE
@@ -107,7 +108,7 @@
     - Validate compare functionality - COMPLETE
     - Validate the wish list functionality - COMPLETE
     - Verify checkout functionality - COMPLETE
-    - Validate reset password functionality - COMPLETE
+    - Validate reset password functionality - CURRENT
     - Validate search functionality 
     - Validate Home Page functionality
     - Validate 'What's New' functionality
