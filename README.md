@@ -97,11 +97,11 @@
     - Developed the page object files "Forgot Your Password"
     - Created test case "Test_009_ResetPassword" to check that a user can reset their password
 
-##. **Current Project**
+23. **Current Project**
     - Clearing items from "Wish List", "Cart" and "Compare"
     - Opening up a gmail account to check for reset links
        
-##. **Future Projects**
+24. **Future Projects**
     - Validate login functionality - COMPLETE
     - Validate logout functionality - COMPLETE
     - Validate the add to cart functionality - COMPLETE
