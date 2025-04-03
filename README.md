@@ -101,7 +101,7 @@
     - Clearing items from "Wish List", "Cart" and "Compare"
     - Opening up a gmail account to check for reset links
        
-**Future Projects**
+##. **Future Projects**
     - Validate login functionality - COMPLETE
     - Validate logout functionality - COMPLETE
     - Validate the add to cart functionality - COMPLETE
