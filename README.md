@@ -98,7 +98,6 @@
     - Created test case "Test_009_ResetPassword" to check that a user can reset their password
 
 23. **Current Project**
-    - Clearing items from "Wish List", "Cart" and "Compare"
     - Opening up a gmail account to check for reset links
        
 24. **Future Projects**
