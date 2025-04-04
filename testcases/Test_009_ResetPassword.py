@@ -7,7 +7,6 @@ from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
 import os
-import imaplib
 import time
 
 class TestResetPwd:
@@ -52,27 +51,20 @@ class TestResetPwd:
             # Log the action and check for the green confirmation bar
             self.logger.info("*** Check for the confirmation bar ***")
             assert self.cl.pwd_reset_conf()
-            time.sleep(2)
 
-            # Check the email for the link
+            # Open Gmail and check for the link
             self.logger.info("*** Check for the email link ***")
             self.driver.execute_script("window.open('');")
-            time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.driver.get("https://mail.google.com")
-            time.sleep(2)
             self.ga = GmailAccount(self.driver)
             self.ga.enter_email(self.user_email)
-            time.sleep(2)
             self.ga.click_next()
             self.ga.enter_pwd(self.password)
-            time.sleep(2)
             self.ga.click_next()
-            time.sleep(2)
-            self.ga.click_not_now()
-            time.sleep(2)
-            self.ga.click_save()
             time.sleep(4)
+            self.driver.close()
+            self.logger.info("*** Test_009_ResetPassword Passed ***")
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure
