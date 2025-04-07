@@ -4,7 +4,6 @@ from pageobjects.CustomerLogin import CustLogin
 from pageobjects.MyAccount import MyAccount
 from pageobjects.YogaCollection import YogaCollection
 from pageobjects.WishList import MyWishList
-from pageobjects.ShoppingCart import ShoppingCart
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
@@ -54,13 +53,15 @@ class TestAddToCompare:
             self.yc = YogaCollection(self.driver)
             self.yc.click_fiona_wishlist()
 
-            # Log the action and check for the header title
-            self.logger.info("*** Navigate to My Wish List webpage")
+            # Log the action and check for the header title and that the item has been added to the Wish List
+            self.logger.info("*** Check to see if header and items displayed ***")
             self.wl = MyWishList(self.driver)
-            self.logger.info("*** Check for header title ***")
             self.wish_head = self.wl.wish_list_header()
             self.wish_list = self.wl.wish_list_fiona_short()
             assert self.wish_head == "My Wish List" and self.wish_list
+
+            # Log the action and remove the items from the Wish List
+            self.wl.remove_fiona_shorts()
             self.driver.quit()
             self.logger.info("*** Test_007_AddToWishList Passed ***")
 

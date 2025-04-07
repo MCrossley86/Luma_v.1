@@ -4,8 +4,6 @@ from pageobjects.CustomerLogin import CustLogin
 from pageobjects.MyAccount import MyAccount
 from pageobjects.YogaCollection import YogaCollection
 from pageobjects.CompareProducts import CompareProducts
-from pageobjects.EchoFit import EchoFit
-from pageobjects.ShoppingCart import ShoppingCart
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
