@@ -99,6 +99,7 @@
 
 23. **Current Project**
     - Opening up a gmail account to check for reset links
+    - Clearing test cases at the end of a test
        
 24. **Future Projects**
     - Validate login functionality - COMPLETE
