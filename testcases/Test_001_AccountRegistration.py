@@ -47,7 +47,7 @@ class TestAccountReg:
             self.logger.info("*** Check for header title ***")
             self.conf_head=self.rp.capt_header_title()
             assert self.conf_head=="My Account"
-            self.driver.close()
+            self.driver.quit()
             self.logger.info("*** Test_001_Account_Registration Passed ***")
 
         except Exception as e:

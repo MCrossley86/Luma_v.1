@@ -66,7 +66,7 @@ class TestLoginDDT:
                     self.cl.clear_password_field()
                 else:
                     lst_status.append('Pass')
-        self.driver.close()
+        self.driver.quit()
 
         # Log the action and assert the final result based on the status of the list
         self.logger.info("*** lst_status check ***")

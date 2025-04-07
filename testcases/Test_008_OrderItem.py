@@ -85,7 +85,7 @@ class TestAddToCart:
             self.oc = OrderConf(self.driver)
             self.conf_head = self.oc.order_conf_head()
             assert self.conf_head == "Thank you for your purchase!"
-            self.driver.close()
+            self.driver.quit()
             self.logger.info("*** Test_008_OrderItem Passed ***")
 
         except Exception as e:

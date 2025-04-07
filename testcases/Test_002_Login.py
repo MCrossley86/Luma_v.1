@@ -44,7 +44,7 @@ class TestLogin:
             self.logger.info("*** Check for header title ***")
             self.conf_title = self.cl.get_home_page_title()
             assert self.conf_title=="Home Page"
-            self.driver.close()
+            self.driver.quit()
             self.logger.info("*** Test_002_Login Passed ***")
 
         except Exception as e:

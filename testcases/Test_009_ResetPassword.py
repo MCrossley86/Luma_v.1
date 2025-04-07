@@ -7,7 +7,6 @@ from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
 import os
-import time
 
 class TestResetPwd:
     # Get the URL, user email and password from the config file and initialize the logger
@@ -62,8 +61,7 @@ class TestResetPwd:
             self.ga.click_next()
             self.ga.enter_pwd(self.password)
             self.ga.click_next()
-            time.sleep(4)
-            self.driver.close()
+            self.driver.quit()
             self.logger.info("*** Test_009_ResetPassword Passed ***")
 
         except Exception as e:
