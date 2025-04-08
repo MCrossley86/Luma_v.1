@@ -62,6 +62,12 @@ class TestAddToCompare:
             self.comp_gwen = self.cp.compare_gwen_short_displayed()
             self.comp_echo = self.cp.compare_echo_short_displayed()
             assert self.comp_head == "Compare Products" and self.comp_echo and self.comp_gwen
+
+            # Log the action and remove the items from the Compare list
+            self.cp.echo_click_x()
+            self.cp.click_ok()
+            self.cp.gwen_click_x()
+            self.cp.click_ok()
             self.driver.quit()
             self.logger.info("*** Test_006_AddToComp Passed ***")
 
