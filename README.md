@@ -87,7 +87,7 @@
 
 20. **Automated Adding To Wish List**
     - Developed the following page object files "WishList"
-    - Created test case "Test_007_AddToWishList" to check that a user can add items to a Wish List. 
+    - Created test case "Test_007_AddToWishList" to check that a user can add and remove items from their Wish List. 
 
 21. **Automated Checking Out Items**
     - Developed the page object files "Order Summary" and "Order Confirmation"
@@ -99,7 +99,6 @@
 
 23. **Current Project**
     - Opening up a gmail account to check for reset links
-    - Clearing test cases at the end of a test
        
 24. **Future Projects**
     - Validate login functionality - COMPLETE
