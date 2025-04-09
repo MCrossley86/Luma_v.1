@@ -64,6 +64,7 @@ class TestAddToCompare:
             assert self.comp_head == "Compare Products" and self.comp_echo and self.comp_gwen
 
             # Log the action and remove the items from the Compare list
+            self.logger.info("*** Removing items from compare list ***")
             self.cp.echo_click_x()
             self.cp.click_ok()
             self.cp.gwen_click_x()

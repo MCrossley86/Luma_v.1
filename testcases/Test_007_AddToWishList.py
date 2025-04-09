@@ -60,7 +60,8 @@ class TestAddToCompare:
             self.wish_list = self.wl.wish_list_fiona_short()
             assert self.wish_head == "My Wish List" and self.wish_list
 
-            # Log the action and remove the items from the Wish List
+            # Log the action and remove the items from the wish list
+            self.logger.info("*** Removing items from wish list ***")
             self.wl.remove_fiona_shorts()
             self.driver.quit()
             self.logger.info("*** Test_007_AddToWishList Passed ***")

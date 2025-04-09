@@ -71,6 +71,10 @@ class TestAddToCart:
             self.head_title = self.sc.capt_head_title()
             self.sc_added_item = self.sc.capt_added_item()
             assert self.head_title == "Shopping Cart" and self.sc_added_item
+
+            # Log the action and remove the items from the cart
+            self.logger.info("*** Removing items from cart ***")
+            self.sc.click_trash_icon()
             self.driver.quit()
             self.logger.info("*** Test_005_AddToCart Passed ***")
 
