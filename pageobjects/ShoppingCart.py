@@ -8,6 +8,7 @@ class ShoppingCart:
     shop_cart_item = "//td[@class='col item']//a[normalize-space()='Echo Fit Compression Short']"
     shop_cart_item_tank = "//td[@class='col item']//a[normalize-space()='Cassius Sparring Tank']"
     shop_cart_checkout = "//button[@data-role='proceed-to-checkout']"
+    trash_icon = "//a[@class='action action-delete']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -36,8 +37,13 @@ class ShoppingCart:
             print(f"An error occurred: {e}")
             return False
 
+    def click_trash_icon(self):
+        # Log the action and click the trash icon
+        self.logger.debug(f"Clicking the trash icon")
+        wait_for_element(self.driver, self.shop_cart_checkout).click()
+
     def click_checkout(self):
         # Log the action and click the "Checkout" button
         self.logger.debug(f"Clicking Checkout button")
-        wait_for_element(self.driver, self.shop_cart_checkout).click()
+        wait_for_element(self.driver, self.trash_icon).click()
 
