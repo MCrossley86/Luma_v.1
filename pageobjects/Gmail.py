@@ -1,4 +1,7 @@
 from utilities.WaitForElements import wait_for_element
+from utilities.WaitForElements import element_clickable
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 from utilities.CustomLog import LogGenerator
 
 class GmailAccount:
@@ -8,6 +11,8 @@ class GmailAccount:
     next_btn = "//span[normalize-space()='Next']"
     not_now_button = "//span[normalize-space()='Not now']"
     save_btn = "//span[normalize-space()='Save']"
+    search_field = "(//div[@id='gs_lc50'])[1]"
+    magnify_icon = "//button[@aria-label='Search mail']//*[name()='svg']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -39,3 +44,14 @@ class GmailAccount:
         self.logger.debug(f"Clicking Save")
         wait_for_element(self.driver, self.save_btn).click()
 
+    def gmail_search_field(self):
+        wait_for_element(self.driver, self.save_btn).click()
+
+    def set_subject_name(self, subject):
+        self.driver.find_element(By.NAME, "q").send_keys(subject)
+
+    def magnify_glass(self):
+        element_clickable(self.driver, self.magnify_icon).click()
+
+    def open_gmail(self):
+        self.driver.find_element(By.XPATH, "//a[contains(text(), 'Security')]").click()

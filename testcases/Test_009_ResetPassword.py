@@ -7,6 +7,7 @@ from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
 import os
+import time
 
 class TestResetPwd:
     # Get the URL, user email and password from the config file and initialize the logger
@@ -16,7 +17,7 @@ class TestResetPwd:
     logger = LogGenerator.get_logger()
     imap_url = "imap.gmail.com"
 
-    @pytest.mark.sanity
+    # @pytest.mark.sanity
     def test_login(self, setup):
         # Log the action, define and create a path to save screenshots
         self.logger.info("*** Test_009_ResetPassword Started ***")
@@ -61,6 +62,21 @@ class TestResetPwd:
             self.ga.click_next()
             self.ga.enter_pwd(self.password)
             self.ga.click_next()
+            time.sleep(2)
+
+            # Search for the email
+            # self.ga.gmail_search_field()
+            self.ga.set_subject_name("Security Alert")
+            self.ga.magnify_glass()
+            time.sleep(5)
+            #
+            # # Open the email
+            self.ga.open_gmail()
+            # time.sleep(5)
+
+            # # Find and click the password reset link
+            # reset_link = self.driver.find_element(By.XPATH, "//a[contains(text(), 'recover your account')]")
+            # ActionChains(self.driver).move_to_element(reset_link).click().perform()
             self.driver.quit()
             self.logger.info("*** Test_009_ResetPassword Passed ***")
 
