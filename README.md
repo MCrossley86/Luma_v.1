@@ -96,9 +96,10 @@
 22. **Automated Resetting Password**
     - Developed the page object files "Forgot Your Password"
     - Created test case "Test_009_ResetPassword" to check that a user can reset their password
+    - **Note** This test case is meant to fail as no email is sent, so link verification is impossible and excluded from sanity checks.
 
 23. **Current Project**
-    - Opening up a gmail account to check for reset links
+    - Using the search field on the Home Page
        
 24. **Future Projects**
     - Validate login functionality - COMPLETE
@@ -107,7 +108,7 @@
     - Validate compare functionality - COMPLETE
     - Validate the wish list functionality - COMPLETE
     - Verify checkout functionality - COMPLETE
-    - Validate reset password functionality - CURRENT
+    - Validate reset password functionality - COMPLETE
     - Validate search functionality 
     - Validate Home Page functionality
     - Validate 'What's New' functionality
