@@ -11,8 +11,10 @@ class GmailAccount:
     next_btn = "//span[normalize-space()='Next']"
     not_now_button = "//span[normalize-space()='Not now']"
     save_btn = "//span[normalize-space()='Save']"
-    search_field = "(//div[@id='gs_lc50'])[1]"
+    search_field = "//input[@placeholder='Search mail']"
     magnify_icon = "//button[@aria-label='Search mail']//*[name()='svg']"
+    g_mail = "//span[normalize-space()='Recover Your Account']"
+    recover_acc = "//a[normalize-space()='recover your account']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -32,7 +34,7 @@ class GmailAccount:
     def click_next(self):
         # Log the action and click the "Next" button
         self.logger.debug(f"Clicking Next")
-        wait_for_element(self.driver, self.next_btn).click()
+        element_clickable(self.driver, self.next_btn).click()
 
     def click_not_now(self):
         # Log the action and click the "Not Now" button
@@ -44,14 +46,22 @@ class GmailAccount:
         self.logger.debug(f"Clicking Save")
         wait_for_element(self.driver, self.save_btn).click()
 
-    def gmail_search_field(self):
-        wait_for_element(self.driver, self.save_btn).click()
-
-    def set_subject_name(self, subject):
-        self.driver.find_element(By.NAME, "q").send_keys(subject)
+    def gmail_search_field(self, subject):
+        # Log the action and enter "Security" in the search field
+        self.logger.debug(f"Entering security in the search field")
+        element_clickable(self.driver, self.search_field).send_keys(subject)
 
     def magnify_glass(self):
+        # Log the action and click on the magnifying glass icon
+        self.logger.debug(f"Clicking on the icon")
         element_clickable(self.driver, self.magnify_icon).click()
 
     def open_gmail(self):
-        self.driver.find_element(By.XPATH, "//a[contains(text(), 'Security')]").click()
+        # Log the action and click on the email
+        self.logger.debug(f"Clicking on the email")
+        element_clickable(self.driver, self.g_mail).click()
+
+    def recovering_account(self):
+        # Log the action and click "recover your account"
+        self.logger.debug(f"Recovering account")
+        element_clickable(self.driver, self.recover_acc).click()
