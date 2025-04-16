@@ -98,10 +98,14 @@
     - Created test case "Test_009_ResetPassword" to check that a user can reset their password
     - **Note** This test case is meant to fail as no email is sent, so link verification is impossible and excluded from sanity checks.
 
-23. **Current Project**
-    - Using the search field on the Home Page
+23. **Automated Searching for an Item**
+    - Developed the page object files "SearchResults"
+    - Created test case "Test_010_SearchField" to check that a user can search for a specific item
+
+24. **Current Project**
+    - Validate the Home Page icon
        
-24. **Future Projects**
+25. **Future Projects**
     - Validate login functionality - COMPLETE
     - Validate logout functionality - COMPLETE
     - Validate the add to cart functionality - COMPLETE
@@ -109,7 +113,7 @@
     - Validate the wish list functionality - COMPLETE
     - Verify checkout functionality - COMPLETE
     - Validate reset password functionality - COMPLETE
-    - Validate search functionality 
+    - Validate search functionality - COMPLETE
     - Validate Home Page functionality
     - Validate 'What's New' functionality
     - Validate 'Women' functionality
