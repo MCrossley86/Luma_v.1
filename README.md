@@ -103,7 +103,8 @@
     - Created test case "Test_010_SearchField" to check that a user can search for a specific item
 
 24. **Current Project**
-    - Validate the Home Page icon
+    - Validate the Navigation Bar - CURRENT
+    - current issues with the Nav Bar I'm currently trying to resolve
        
 25. **Future Projects**
     - Validate login functionality - COMPLETE
@@ -114,12 +115,6 @@
     - Verify checkout functionality - COMPLETE
     - Validate reset password functionality - COMPLETE
     - Validate search functionality - COMPLETE
-    - Validate Home Page functionality
-    - Validate 'What's New' functionality
-    - Validate 'Women' functionality
-    - Validate 'Men' functionality
-    - Validate 'Gear' functionality
-    - Validate 'Training' functionality
-    - Validate 'Sale' functionality
-    - Validate 'My Account' functionality
+    - Validate the Navigation Bar - CURRENT
+    - Validate the account menu functionality
     - Expand on the login page by creating a data-driven test
