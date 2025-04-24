@@ -10,7 +10,7 @@ class MainPage:
     search_fld = "//input[@id='search']"
     hover_dropdown = "(//li[@id='qs-option-0'])[1]"
     click_dropdown = "(//li[@id='qs-option-1'])[1]"
-
+    whats_new_link = "(//span[normalize-space()=What's New])[1]"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -44,3 +44,8 @@ class MainPage:
         hover_element = wait_for_element(self.driver, self.hover_dropdown)
         comp_element = wait_for_element(self.driver, self.click_dropdown)
         act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
+
+    def click_whats_new(self):
+        # Log the action and click on "What's New" in the nav bar
+        self.logger.debug(f"Clicking on What's New")
+        wait_for_element(self.driver, self.whats_new_link).click()
