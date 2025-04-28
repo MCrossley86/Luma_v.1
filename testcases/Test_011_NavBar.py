@@ -1,10 +1,9 @@
 # Import the necessary modules
 from pageobjects.HomePage import MainPage
-from pageobjects.WhatsNew import WhatsNewHP
+from pageobjects.NavBar import NavBarHP
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
 import os
-import time
 
 class TestNavBar:
     # Get the URL from the config file and initialize the logger
@@ -29,15 +28,26 @@ class TestNavBar:
             self.logger.info("*** Clicking what's new in the nav bar ***")
             self.mp = MainPage(self.driver)
 
-            # Current issue with clicking the link
-            self.mp.click_whats_new()
-            time.sleep(2)
-
-            # Log the action and check for the header title
-            self.logger.info("*** Check for header title ***")
-            self.wn = WhatsNewHP(self.driver)
-            self.header_title = self.wn.whats_new_title()
-            assert self.header_title == "What's New"
+            # Click on the nav bar links and check the headers
+            self.nb = NavBarHP(self.driver)
+            self.nb.click_whats_new()
+            self.wn_title = self.nb.whats_new_title()
+            assert self.wn_title == "What's New"
+            self.nb.click_women()
+            self.w_title = self.nb.women_title()
+            assert self.w_title == "Women"
+            self.nb.click_men()
+            self.m_title = self.nb.men_title()
+            assert self.m_title == "Men"
+            self.nb.click_gear()
+            self.g_title = self.nb.gear_title()
+            assert self.g_title == "Gear"
+            self.nb.click_training()
+            self.t_title = self.nb.training_title()
+            assert self.t_title == "Training"
+            self.nb.click_sale()
+            self.s_title = self.nb.sale_title()
+            assert self.s_title == "Sale"
             self.driver.quit()
             self.logger.info("*** Test_011_Nav_Bar_Field Passed ***")
 
