@@ -102,9 +102,12 @@
     - Developed the page object files "SearchResults"
     - Created test case "Test_010_SearchField" to check that a user can search for a specific item
 
-24. **Current Project**
-    - Validate the Navigation Bar - CURRENT
-    - current issues with the Nav Bar I'm currently trying to resolve
+24. **Automated clicking on the navigation bar**
+    - Developed the page object files "NavBar"
+    - Created test case "Test_011_NavBar" to check that a user can click on the nav bar to specific items
+
+25. **Current Project**
+    - Validate the Account Menu
        
 25. **Future Projects**
     - Validate login functionality - COMPLETE
@@ -115,6 +118,6 @@
     - Verify checkout functionality - COMPLETE
     - Validate reset password functionality - COMPLETE
     - Validate search functionality - COMPLETE
-    - Validate the Navigation Bar - CURRENT
-    - Validate the account menu functionality
+    - Validate the Navigation Bar - COMPLETE
+    - Validate the account menu functionality - CURRENT
     - Expand on the login page by creating a data-driven test
