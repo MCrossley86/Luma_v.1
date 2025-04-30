@@ -4,11 +4,13 @@ from pageobjects.NavBar import NavBarHP
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
 import os
+import time
 
 class TestNavBar:
     # Get the URL from the config file and initialize the logger
     baseURL = ReadConfig.get_application_url()
     logger = LogGenerator.get_logger()
+
 
     def test_nav_bar(self, setup):
         # Log the action, define and create a path to save screenshots
@@ -36,6 +38,10 @@ class TestNavBar:
             self.nb.click_women()
             self.w_title = self.nb.women_title()
             assert self.w_title == "Women"
+            self.nb.women_tops_click()
+            current_url = self.driver.current_url
+            expected_url = "https://magento.softwaretestingboard.com/women/tops-women.html"
+            assert current_url == expected_url
             self.nb.click_men()
             self.m_title = self.nb.men_title()
             assert self.m_title == "Men"

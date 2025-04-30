@@ -1,11 +1,15 @@
 # Import the necessary modules
 from utilities.WaitForElements import wait_for_element
+from selenium.webdriver import ActionChains
 from utilities.CustomLog import LogGenerator
 
 class NavBarHP:
     # Define locators for webpage elements
     whats_new_link = "//a[@id='ui-id-3']//span[1]"
     women_link = "//a[@id='ui-id-4']//span[1]"
+    w_tops_lnk = "(//span[contains(text(),'Tops')])[1]"
+    w_nav_hover = "//a[@id='ui-id-4']//span[1]"
+    w_tops_click = "(//span[contains(text(),'Tops')])[1]"
     men_link = "//a[@id='ui-id-5']//span[1]"
     gear_link = "//a[@id='ui-id-6']//span[1]"
     training_link = "//a[@id='ui-id-7']//span[1]"
@@ -59,6 +63,25 @@ class NavBarHP:
             return False
 
     def women_title(self):
+        # Log the action and capture the header text
+        self.logger.debug(f"Capturing header text")
+        try:
+            text_capture = wait_for_element(self.driver, self.title_header).text
+            print("Text captured")
+            return text_capture
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return False
+
+    def women_tops_click(self):
+        # Log the action and click on "Tops" in the nav bar women section
+        self.logger.debug(f"Clicking on Tops in the women section")
+        act = ActionChains(self.driver)
+        hover_element = wait_for_element(self.driver, self.w_nav_hover)
+        comp_element = wait_for_element(self.driver, self.w_tops_click)
+        act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
+
+    def w_tops_title(self):
         # Log the action and capture the header text
         self.logger.debug(f"Capturing header text")
         try:
