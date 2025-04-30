@@ -109,7 +109,7 @@
 25. **Current Project**
     - Validate the Navigation Bar - working on the submenus
        
-25. **Future Projects**
+26. **Future Projects**
     - Validate login functionality - COMPLETE
     - Validate logout functionality - COMPLETE
     - Validate the add to cart functionality - COMPLETE
