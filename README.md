@@ -107,7 +107,7 @@
     - Created test case "Test_011_NavBar" to check that a user can click on the nav bar to specific items
 
 25. **Current Project**
-    - Validate the Account Menu
+    - Validate the Navigation Bar - working on the submenus
        
 25. **Future Projects**
     - Validate login functionality - COMPLETE
@@ -118,6 +118,6 @@
     - Verify checkout functionality - COMPLETE
     - Validate reset password functionality - COMPLETE
     - Validate search functionality - COMPLETE
-    - Validate the Navigation Bar - COMPLETE
-    - Validate the account menu functionality - CURRENT
+    - Validate the Navigation Bar - CURRENT
+    - Validate the account menu functionality 
     - Expand on the login page by creating a data-driven test
