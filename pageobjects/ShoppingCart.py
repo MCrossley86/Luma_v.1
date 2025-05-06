@@ -40,10 +40,10 @@ class ShoppingCart:
     def click_trash_icon(self):
         # Log the action and click the trash icon
         self.logger.debug(f"Clicking the trash icon")
-        wait_for_element(self.driver, self.shop_cart_checkout).click()
+        wait_for_element(self.driver, self.trash_icon).click()
 
     def click_checkout(self):
         # Log the action and click the "Checkout" button
         self.logger.debug(f"Clicking Checkout button")
-        wait_for_element(self.driver, self.trash_icon).click()
+        wait_for_element(self.driver, self.shop_cart_checkout).click()
 
