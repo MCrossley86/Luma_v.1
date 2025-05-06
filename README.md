@@ -105,9 +105,20 @@
 24. **Automated clicking on the navigation bar**
     - Developed the page object files "NavBar"
     - Created test case "Test_011_NavBar" to check that a user can click on the nav bar to specific items
+    - Following Nav Bar completion:
+      - "What's New" - COMPLETE
+      - "Women"
+        - "Tops" - COMPLETE
+          - "Jackets" - INCOMPLETE
+          - "Hoodies & Sweatshirts" - INCOMPLETE
+          - "Tees" - INCOMPLETE
+          - "Bras & Tanks" - INCOMPLETE
+        - "Bottoms" - COMPLETE
+          - "Pants" - INCOMPLETE
+          - "Shorts" - INCOMPLETE
 
 25. **Current Project**
-    - Validate the Navigation Bar - working on the submenus
+    - Validate the Navigation Bar - IN PROGRESS
        
 26. **Future Projects**
     - Validate login functionality - COMPLETE
