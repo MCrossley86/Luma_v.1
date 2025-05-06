@@ -8,8 +8,9 @@ class NavBarHP:
     whats_new_link = "//a[@id='ui-id-3']//span[1]"
     women_link = "//a[@id='ui-id-4']//span[1]"
     w_tops_lnk = "(//span[contains(text(),'Tops')])[1]"
-    w_nav_hover = "//a[@id='ui-id-4']//span[1]"
+    w_nav_hover = "(//a[@id='ui-id-4'])//span[1]"
     w_tops_click = "(//span[contains(text(),'Tops')])[1]"
+    w_bottoms_click = "(//span[contains(text(),'Bottoms')])[1]"
     men_link = "//a[@id='ui-id-5']//span[1]"
     gear_link = "//a[@id='ui-id-6']//span[1]"
     training_link = "//a[@id='ui-id-7']//span[1]"
@@ -79,6 +80,14 @@ class NavBarHP:
         act = ActionChains(self.driver)
         hover_element = wait_for_element(self.driver, self.w_nav_hover)
         comp_element = wait_for_element(self.driver, self.w_tops_click)
+        act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
+
+    def women_bottoms_click(self):
+        # Log the action and click on "Bottoms" in the nav bar women section
+        self.logger.debug(f"Clicking on Bottoms in the women section")
+        act = ActionChains(self.driver)
+        hover_element = wait_for_element(self.driver, self.w_nav_hover)
+        comp_element = wait_for_element(self.driver, self.w_bottoms_click)
         act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
 
     def w_tops_title(self):
