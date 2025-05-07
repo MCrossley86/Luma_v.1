@@ -109,7 +109,7 @@
       - "What's New" - COMPLETE
       - "Women"
         - "Tops" - COMPLETE
-          - "Jackets" - INCOMPLETE
+          - "Jackets" - COMPLETE
           - "Hoodies & Sweatshirts" - INCOMPLETE
           - "Tees" - INCOMPLETE
           - "Bras & Tanks" - INCOMPLETE

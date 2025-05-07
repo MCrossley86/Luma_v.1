@@ -8,8 +8,12 @@ class NavBarHP:
     whats_new_link = "//a[@id='ui-id-3']//span[1]"
     women_link = "//a[@id='ui-id-4']//span[1]"
     w_tops_lnk = "(//span[contains(text(),'Tops')])[1]"
-    w_nav_hover = "(//a[@id='ui-id-4'])//span[1]"
+    w_nav_hover = "(//span[normalize-space()='Women'])[1]"
     w_tops_click = "(//span[contains(text(),'Tops')])[1]"
+    w_jkt_clck = "(//span[contains(text(),'Jackets')])[1]"
+    w_hoodies_sweatshirt_click = "(//span[contains(text(),'Hoodies & Sweatshirts')])[1]"
+    w_tees_click = "(//span[contains(text(),'Tees')])[1]"
+    w_bras_tanks_click = "(//span[contains(text(),'Bras & Tanks')])[1]"
     w_bottoms_click = "(//span[contains(text(),'Bottoms')])[1]"
     men_link = "//a[@id='ui-id-5']//span[1]"
     gear_link = "//a[@id='ui-id-6']//span[1]"
@@ -79,8 +83,17 @@ class NavBarHP:
         self.logger.debug(f"Clicking on Tops in the women section")
         act = ActionChains(self.driver)
         hover_element = wait_for_element(self.driver, self.w_nav_hover)
-        comp_element = wait_for_element(self.driver, self.w_tops_click)
+        comp_element = wait_for_element(self.driver, self.w_tops_lnk)
         act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
+
+    def women_jacket_click(self):
+        # Log the action and click on "Jacket" in the nav bar tops subsection
+        self.logger.debug(f"Clicking on Jacket in the tops subsection")
+        act = ActionChains(self.driver)
+        w_hover_element = wait_for_element(self.driver, self.w_nav_hover)
+        top_hover_element = wait_for_element(self.driver, self.w_tops_click)
+        comp_element = wait_for_element(self.driver, self.w_jkt_clck)
+        act.move_to_element(w_hover_element).move_to_element(top_hover_element).move_to_element(comp_element).click().perform()
 
     def women_bottoms_click(self):
         # Log the action and click on "Bottoms" in the nav bar women section

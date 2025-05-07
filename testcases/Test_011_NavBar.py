@@ -41,6 +41,10 @@ class TestNavBar:
             current_url = self.driver.current_url
             w_tops_expected_url = "https://magento.softwaretestingboard.com/women/tops-women.html"
             assert current_url == w_tops_expected_url
+            self.nb.women_jacket_click()
+            current_url = self.driver.current_url
+            w_jacket_expected_url = "https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html"
+            assert current_url == w_jacket_expected_url
             self.nb.women_bottoms_click()
             current_url = self.driver.current_url
             w_bottoms_expected_url = "https://magento.softwaretestingboard.com/women/bottoms-women.html"
