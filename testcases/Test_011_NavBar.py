@@ -4,6 +4,7 @@ from pageobjects.NavBar import NavBarHP
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
 import os
+import time
 
 class TestNavBar:
     # Get the URL from the config file and initialize the logger
@@ -45,6 +46,10 @@ class TestNavBar:
             current_url = self.driver.current_url
             w_jacket_expected_url = "https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html"
             assert current_url == w_jacket_expected_url
+            self.nb.women_hoodies_and_sweatshirts_click()
+            current_url = self.driver.current_url
+            w_hoodies_sweatshirts_expected_url = "https://magento.softwaretestingboard.com/women/tops-women/hoodies-and-sweatshirts-women.html"
+            assert current_url == w_hoodies_sweatshirts_expected_url
             self.nb.women_bottoms_click()
             current_url = self.driver.current_url
             w_bottoms_expected_url = "https://magento.softwaretestingboard.com/women/bottoms-women.html"
