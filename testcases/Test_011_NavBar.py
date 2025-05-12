@@ -1,5 +1,5 @@
 # Import the necessary modules
-from pageobjects.HomePage import MainPage
+from pageobjects.NavBar import NavBarHP
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
 import os
@@ -19,16 +19,17 @@ class TestNavBar:
             os.makedirs(screenshots_path)
 
         try:
-            # Log the action and navigate to the account registration page
-            self.logger.info("*** Navigate to the main page ***")
+            # Log the action and open up the webpage
+            self.logger.info("*** Opening the webpage ***")
             self.driver.get(self.baseURL)
             self.driver.maximize_window()
 
-            # Log the action and click on what's new in the nav bar
-            self.logger.info("*** Clicking what's new in the nav bar ***")
-            self.mp = MainPage(self.driver)
-
-            # Click on the nav bar links and check the headers
+            # Log the action and click on the nav bar links and check the headers
+            self.logger.info("*** Checking links in the nav bar ***")
+            self.nb = NavBarHP(self.driver)
+            self.nb.click_whats_new()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "What's New"
             self.driver.quit()
             self.logger.info("*** Test_011_Nav_Bar_Field Passed ***")
 

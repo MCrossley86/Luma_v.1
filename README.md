@@ -106,7 +106,7 @@
     - Developed the page object files "NavBar"
     - Created test case "Test_011_NavBar" to check that a user can click on the nav bar to specific items
     - Following Nav Bar completion:
-      - "What's New" - IN PROGRESS
+      - "What's New" - COMPLETE
       - "Women"
         - "Tops" - IN PROGRESS
           - "Jackets" - INVESTIGATING

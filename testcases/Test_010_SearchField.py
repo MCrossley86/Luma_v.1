@@ -21,7 +21,7 @@ class TestSearchField:
             os.makedirs(screenshots_path)
 
         try:
-            # Log the action and navigate to the account registration page
+            # Log the action and navigate to the main page
             self.logger.info("*** Navigate to the main page ***")
             self.driver.get(self.baseURL)
             self.driver.maximize_window()
