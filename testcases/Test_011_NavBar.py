@@ -3,6 +3,7 @@ from pageobjects.NavBar import NavBarHP
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
 import os
+import time
 
 class TestNavBar:
     # Get the URL from the config file and initialize the logger
@@ -27,9 +28,12 @@ class TestNavBar:
             # Log the action and click on the nav bar links and check the headers
             self.logger.info("*** Checking links in the nav bar ***")
             self.nb = NavBarHP(self.driver)
-            self.nb.click_whats_new()
+            self.nb.click_whats_new_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "What's New"
+            self.nb.click_women_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Women"
             self.driver.quit()
             self.logger.info("*** Test_011_Nav_Bar_Field Passed ***")
 

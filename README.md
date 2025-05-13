@@ -107,10 +107,10 @@
     - Created test case "Test_011_NavBar" to check that a user can click on the nav bar to specific items
     - Following Nav Bar completion:
       - "What's New" - COMPLETE
-      - "Women"
+      - "Women" - COMPLETE
         - "Tops" - IN PROGRESS
-          - "Jackets" - INVESTIGATING
-          - "Hoodies & Sweatshirts" - COMPLETE
+          - "Jackets" - INCOMPLETE
+          - "Hoodies & Sweatshirts" - INCOMPLETE
           - "Tees" - INCOMPLETE
           - "Bras & Tanks" - INCOMPLETE
         - "Bottoms" - COMPLETE
@@ -119,7 +119,6 @@
 
 25. **Current Project**
     - Validate the Navigation Bar - IN PROGRESS
-    - Investigation as to why the XPATH isn't found - IN PROGRESS
     - Investigation as to why some test cases aren't running in Jenkins - IN PROGRESS
     - Investigate why the automation log is creating new logs - IN PROGRESS
        
