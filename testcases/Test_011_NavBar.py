@@ -3,7 +3,6 @@ from pageobjects.NavBar import NavBarHP
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
 import os
-import time
 
 class TestNavBar:
     # Get the URL from the config file and initialize the logger
@@ -34,6 +33,21 @@ class TestNavBar:
             self.nb.click_women_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Women"
+            self.nb.click_w_tops_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Tops"
+            self.nb.click_w_jackets_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Jackets"
+            self.nb.click_w_hoodies_sweatshirts_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Hoodies & Sweatshirts"
+            self.nb.click_w_tees_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Tees"
+            self.nb.click_w_bras_tanks_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Bras & Tanks"
             self.driver.quit()
             self.logger.info("*** Test_011_Nav_Bar_Field Passed ***")
 

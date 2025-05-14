@@ -15,3 +15,10 @@ def element_clickable(driver, locator, timeout=10):
     logger = LogGenerator.get_logger()
     logger.debug(f"Waiting for the element with locator: {locator}")
     return WebDriverWait(driver, timeout).until(ec.element_to_be_clickable((By.XPATH, locator)))
+
+def element_visible(driver, locator, timeout=10):
+    # Log the action and wait for the element to be visible
+    logger = LogGenerator.get_logger()
+    logger.debug(f"Waiting for the element with locator: {locator}")
+    return WebDriverWait(driver, timeout).until(ec.visibility_of_element_located((By.XPATH, locator)))
+

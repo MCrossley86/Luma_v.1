@@ -108,8 +108,8 @@
     - Following Nav Bar completion:
       - "What's New" - COMPLETE
       - "Women" - COMPLETE
-        - "Tops" - IN PROGRESS
-          - "Jackets" - INCOMPLETE
+        - "Tops" - COMPLETE
+          - "Jackets" - COMPLETE
           - "Hoodies & Sweatshirts" - INCOMPLETE
           - "Tees" - INCOMPLETE
           - "Bras & Tanks" - INCOMPLETE
