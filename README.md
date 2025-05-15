@@ -106,16 +106,9 @@
     - Developed the page object files "NavBar"
     - Created test case "Test_011_NavBar" to check that a user can click on the nav bar to specific items
     - Following Nav Bar completion:
-      - "What's New" - COMPLETE
-      - "Women" - COMPLETE
-        - "Tops" - COMPLETE
-          - "Jackets" - COMPLETE
-          - "Hoodies & Sweatshirts" - INCOMPLETE
-          - "Tees" - INCOMPLETE
-          - "Bras & Tanks" - INCOMPLETE
-        - "Bottoms" - COMPLETE
-          - "Pants" - INCOMPLETE
-          - "Shorts" - INCOMPLETE
+      - "What's New"
+      - "Women" and submenu
+      - "Men" and submenu - IN PROGRESS
 
 25. **Current Project**
     - Validate the Navigation Bar - IN PROGRESS

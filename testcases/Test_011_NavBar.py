@@ -48,6 +48,15 @@ class TestNavBar:
             self.nb.click_w_bras_tanks_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Bras & Tanks"
+            self.nb.click_w_bottoms_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Bottoms"
+            self.nb.click_w_pants_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Pants"
+            self.nb.click_w_shorts_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Shorts"
             self.driver.quit()
             self.logger.info("*** Test_011_Nav_Bar_Field Passed ***")
 

@@ -13,6 +13,9 @@ class NavBarHP:
     w_hoodies_sweatshirts_lnk = "(//a[@id='ui-id-12'])[1]"
     w_tees_lnk = "(//a[@id='ui-id-13'])[1]"
     w_bras_tanks_lnk = "(//a[@id='ui-id-14'])[1]"
+    w_bottoms_lnk = "(//a[@id='ui-id-10'])[1]"
+    w_pants_lnk = "(//a[@id='ui-id-15'])[1]"
+    w_shorts_lnk = "(//a[@id='ui-id-16'])[1]"
     m_lnk = "(//a[@id='ui-id-5'])[1]"
     head_conf = "//span[@class='base']"
 
@@ -78,6 +81,35 @@ class NavBarHP:
         hover_element_2 = wait_for_element(self.driver, self.w_lnk)
         hover_element_3 = wait_for_element(self.driver, self.w_tops_lnk)
         comp_element = wait_for_element(self.driver, self.w_bras_tanks_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
+
+    def click_w_bottoms_lnk(self):
+        # Log the action and click on "bottoms" link in the women tab in the nav bar
+        self.logger.debug(f"Clicking on the bottoms link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.w_lnk)
+        comp_element = wait_for_element(self.driver, self.w_bottoms_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(comp_element).click().perform()
+
+    def click_w_pants_lnk(self):
+        # Log the action and click on "pants" link in the women tab in the nav bar
+        self.logger.debug(f"Clicking on the pants link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_3 = wait_for_element(self.driver, self.w_bottoms_lnk)
+        comp_element = wait_for_element(self.driver, self.w_pants_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
+
+    def click_w_shorts_lnk(self):
+        # Log the action and click on "shorts" link in the women tab in the nav bar
+        self.logger.debug(f"Clicking on the shorts link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_3 = wait_for_element(self.driver, self.w_bottoms_lnk)
+        comp_element = wait_for_element(self.driver, self.w_shorts_lnk)
         act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
 
     def capt_header_title(self):
