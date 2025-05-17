@@ -112,6 +112,11 @@ class NavBarHP:
         comp_element = wait_for_element(self.driver, self.w_shorts_lnk)
         act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
 
+    def click_men_lnk(self):
+        # Log the action and click the "Men" link
+        self.logger.debug(f"Clicking the Men link")
+        wait_for_element(self.driver, self.m_lnk).click()
+
     def capt_header_title(self):
         # Capture the header title text and handle any exceptions
         try:
