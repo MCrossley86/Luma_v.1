@@ -76,8 +76,9 @@ class TestAddToCart:
             self.logger.info("*** Order the item *** ")
             self.os = OrderSum(self.driver)
             self.os.slct_ship_mthd()
-            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            self.os.scroll_to_bottom()
             self.os.clck_nxt()
+            self.os.scroll_to_bottom()
             self.os.clck_order()
 
             # Log the action and check that the item has been purchased

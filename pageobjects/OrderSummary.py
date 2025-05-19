@@ -18,6 +18,11 @@ class OrderSum:
         self.logger.debug(f"Clicking $5 radio button")
         wait_for_element(self.driver, self.ship_method).click()
 
+    def scroll_to_bottom(self):
+        # Log the action and scroll to the bottom of the page
+        self.logger.debug(f"scrolling to the bottom of the page")
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
     def clck_nxt(self):
         # Log the action and click the "Next" button
         self.logger.debug(f"Clicking Next button")
