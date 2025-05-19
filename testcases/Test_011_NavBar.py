@@ -60,6 +60,21 @@ class TestNavBar:
             self.nb.click_men_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Men"
+            self.nb.click_m_tops_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Tops"
+            self.nb.click_m_jackets_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Jackets"
+            self.nb.click_m_hoodies_sweatshirts_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Hoodies & Sweatshirts"
+            self.nb.click_m_tees_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Tees"
+            self.nb.click_m_tanks_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Tanks"
             self.driver.quit()
             self.logger.info("*** Test_011_Nav_Bar_Field Passed ***")
 

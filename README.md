@@ -109,7 +109,8 @@
       - "What's New"
       - "Women" and submenu
       - "Men" - COMPLETE 
-        - and submenu - IN PROGRESS
+        - Tops and submenu - COMPLETE
+        - Bottoms and submenu - IN PROGRESS
 
 25. **Current Project**
     - Validate the Navigation Bar - IN PROGRESS

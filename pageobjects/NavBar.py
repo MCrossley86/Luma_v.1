@@ -17,6 +17,14 @@ class NavBarHP:
     w_pants_lnk = "(//a[@id='ui-id-15'])[1]"
     w_shorts_lnk = "(//a[@id='ui-id-16'])[1]"
     m_lnk = "(//a[@id='ui-id-5'])[1]"
+    m_tops_lnk = "(//a[@id='ui-id-17'])[1]"
+    m_jacket_lnk = "(//a[@id='ui-id-19'])[1]"
+    m_hoodies_sweatshirts_lnk = "(//a[@id='ui-id-20'])[1]"
+    m_tees_lnk = "(//a[@id='ui-id-21'])[1]"
+    m_tanks_lnk = "(//a[@id='ui-id-22'])[1]"
+    m_bottoms_lnk = "(//a[@id='ui-id-18'])[1]"
+    m_pants_lnk = "(//a[@id='ui-id-23'])[1]"
+    m_shorts_lnk = "(//a[@id='ui-id-24'])[1]"
     head_conf = "//span[@class='base']"
 
     def __init__(self, driver):
@@ -116,6 +124,55 @@ class NavBarHP:
         # Log the action and click the "Men" link
         self.logger.debug(f"Clicking the Men link")
         wait_for_element(self.driver, self.m_lnk).click()
+
+    def click_m_tops_lnk(self):
+        # Log the action and click on "tops" link in the men tab in the nav bar
+        self.logger.debug(f"Clicking on the tops link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.m_lnk)
+        comp_element = wait_for_element(self.driver, self.m_tops_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(comp_element).click().perform()
+
+    def click_m_jackets_lnk(self):
+        # Log the action and click on "jackets" link in the men tab in the nav bar
+        self.logger.debug(f"Clicking on the jackets link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_3 = wait_for_element(self.driver, self.m_tops_lnk)
+        comp_element = wait_for_element(self.driver, self.m_jacket_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
+
+    def click_m_hoodies_sweatshirts_lnk(self):
+        # Log the action and click on "hoodies and sweatshirts" link in the men tab in the nav bar
+        self.logger.debug(f"Clicking on the hoodies and sweatshirts link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_3 = wait_for_element(self.driver, self.m_tops_lnk)
+        comp_element = wait_for_element(self.driver, self.m_hoodies_sweatshirts_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
+
+    def click_m_tees_lnk(self):
+        # Log the action and click on "tees" link in the men tab in the nav bar
+        self.logger.debug(f"Clicking on the tees link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_3 = wait_for_element(self.driver, self.m_tops_lnk)
+        comp_element = wait_for_element(self.driver, self.m_tees_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
+
+    def click_m_tanks_lnk(self):
+        # Log the action and click on "tanks" link in the men tab in the nav bar
+        self.logger.debug(f"Clicking on the tanks link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_3 = wait_for_element(self.driver, self.m_tops_lnk)
+        comp_element = wait_for_element(self.driver, self.m_tanks_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
 
     def capt_header_title(self):
         # Capture the header title text and handle any exceptions
