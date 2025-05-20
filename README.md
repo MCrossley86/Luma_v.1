@@ -108,9 +108,8 @@
     - Following Nav Bar completion:
       - "What's New"
       - "Women" and submenu
-      - "Men" - COMPLETE 
-        - Tops and submenu - COMPLETE
-        - Bottoms and submenu - IN PROGRESS
+      - "Men" and submenu
+      - "Gear" and submenu - IN PROGRESS
 
 25. **Current Project**
     - Validate the Navigation Bar - IN PROGRESS

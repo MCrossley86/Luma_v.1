@@ -25,6 +25,10 @@ class NavBarHP:
     m_bottoms_lnk = "(//a[@id='ui-id-18'])[1]"
     m_pants_lnk = "(//a[@id='ui-id-23'])[1]"
     m_shorts_lnk = "(//a[@id='ui-id-24'])[1]"
+    g_lnk = "(//a[@id='ui-id-6'])[1]"
+    bags_lnk = "(//a[@id='ui-id-25'])[1]"
+    fit_equip_lnk = "(//a[@id='ui-id-26'])[1]"
+    watch_lnk = "(//a[@id='ui-id-27'])[1]"
     head_conf = "//span[@class='base']"
 
     def __init__(self, driver):
@@ -202,6 +206,38 @@ class NavBarHP:
         hover_element_3 = wait_for_element(self.driver, self.m_bottoms_lnk)
         comp_element = wait_for_element(self.driver, self.m_shorts_lnk)
         act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
+
+    def click_gear_lnk(self):
+        # Log the action and click the "Gear" link
+        self.logger.debug(f"Clicking the Gear link")
+        wait_for_element(self.driver, self.g_lnk).click()
+
+    def click_bag_lnk(self):
+        # Log the action and click on "bag" link in the gears tab in the nav bar
+        self.logger.debug(f"Clicking on the bottoms link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.g_lnk)
+        comp_element = wait_for_element(self.driver, self.bags_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(comp_element).click().perform()
+
+    def click_fit_equip_lnk(self):
+        # Log the action and click on "fitness and equipment" link in the gears tab in the nav bar
+        self.logger.debug(f"Clicking on the bottoms link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.g_lnk)
+        comp_element = wait_for_element(self.driver, self.fit_equip_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(comp_element).click().perform()
+
+    def click_watches_lnk(self):
+        # Log the action and click on "watches" link in the gears tab in the nav bar
+        self.logger.debug(f"Clicking on the bottoms link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.g_lnk)
+        comp_element = wait_for_element(self.driver, self.watch_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(comp_element).click().perform()
 
     def capt_header_title(self):
         # Capture the header title text and handle any exceptions
