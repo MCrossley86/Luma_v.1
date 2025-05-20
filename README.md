@@ -114,7 +114,6 @@
 
 25. **Current Project**
     - Validate the Navigation Bar - IN PROGRESS
-    - Investigation as to why some test cases aren't running in Jenkins - IN PROGRESS
     - Investigate why the automation log is creating new logs - IN PROGRESS
        
 26. **Future Projects**

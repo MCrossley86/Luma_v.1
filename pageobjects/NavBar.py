@@ -174,6 +174,35 @@ class NavBarHP:
         comp_element = wait_for_element(self.driver, self.m_tanks_lnk)
         act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
 
+    def click_m_bottoms_lnk(self):
+        # Log the action and click on "bottoms" link in the men tab in the nav bar
+        self.logger.debug(f"Clicking on the bottoms link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.m_lnk)
+        comp_element = wait_for_element(self.driver, self.m_bottoms_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(comp_element).click().perform()
+
+    def click_m_pants_lnk(self):
+        # Log the action and click on "pants" link in the men tab in the nav bar
+        self.logger.debug(f"Clicking on the pants link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_3 = wait_for_element(self.driver, self.m_bottoms_lnk)
+        comp_element = wait_for_element(self.driver, self.m_pants_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
+
+    def click_m_shorts_lnk(self):
+        # Log the action and click on "shorts" link in the men tab in the nav bar
+        self.logger.debug(f"Clicking on the shorts link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.w_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.m_lnk)
+        hover_element_3 = wait_for_element(self.driver, self.m_bottoms_lnk)
+        comp_element = wait_for_element(self.driver, self.m_shorts_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(hover_element_3).move_to_element(comp_element).click().perform()
+
     def capt_header_title(self):
         # Capture the header title text and handle any exceptions
         try:
