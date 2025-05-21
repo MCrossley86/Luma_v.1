@@ -2,6 +2,7 @@
 from pageobjects.NavBar import NavBarHP
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
+import pytest
 import os
 
 class TestNavBar:
@@ -9,7 +10,7 @@ class TestNavBar:
     baseURL = ReadConfig.get_application_url()
     logger = LogGenerator.get_logger()
 
-
+    @pytest.mark.sanity
     def test_nav_bar(self, setup):
         # Log the action, define and create a path to save screenshots
         self.logger.info("*** Test_011_Nav_Bar Started ***")
@@ -35,78 +36,128 @@ class TestNavBar:
             self.nb.click_women_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Women"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women.html"
             self.nb.click_w_tops_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Tops"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women/tops-women.html"
             self.nb.click_w_jackets_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Jackets"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html"
             self.nb.click_w_hoodies_sweatshirts_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Hoodies & Sweatshirts"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women/tops-women/hoodies-and-sweatshirts-women.html"
             self.nb.click_w_tees_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Tees"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women/tops-women/tees-women.html"
             self.nb.click_w_bras_tanks_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Bras & Tanks"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women/tops-women/tanks-women.html"
             self.nb.click_w_bottoms_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Bottoms"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women/bottoms-women.html"
             self.nb.click_w_pants_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Pants"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women/bottoms-women/pants-women.html"
             self.nb.click_w_shorts_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Shorts"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/women/bottoms-women/shorts-women.html"
             self.nb.click_men_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Men"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men.html"
             self.nb.click_m_tops_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Tops"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men/tops-men.html"
             self.nb.click_m_jackets_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Jackets"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men/tops-men/jackets-men.html"
             self.nb.click_m_hoodies_sweatshirts_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Hoodies & Sweatshirts"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men/tops-men/hoodies-and-sweatshirts-men.html"
             self.nb.click_m_tees_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Tees"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men/tops-men/tees-men.html"
             self.nb.click_m_tanks_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Tanks"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men/tops-men/tanks-men.html"
             self.nb.click_m_bottoms_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Bottoms"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men/bottoms-men.html"
             self.nb.click_m_pants_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Pants"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men/bottoms-men/pants-men.html"
             self.nb.click_m_shorts_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Shorts"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/men/bottoms-men/shorts-men.html"
             self.nb.click_gear_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Gear"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/gear.html"
             self.nb.click_bag_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Bags"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/gear/bags.html"
             self.nb.click_fit_equip_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Fitness Equipment"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/gear/fitness-equipment.html"
             self.nb.click_watches_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Watches"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/gear/watches.html"
             self.nb.click_training_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Training"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/training.html"
             self.nb.click_vid_dwnld_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Video Download"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/training/training-video.html"
             self.nb.click_sale_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Sale"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/sale.html"
             self.driver.quit()
             self.logger.info("*** Test_011_Nav_Bar_Field Passed ***")
 
