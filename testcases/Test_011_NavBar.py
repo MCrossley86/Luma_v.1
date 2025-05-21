@@ -30,6 +30,8 @@ class TestNavBar:
             self.nb.click_whats_new_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "What's New"
+            self.capt_url = self.nb.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/what-is-new.html"
             self.nb.click_women_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Women"
@@ -96,6 +98,15 @@ class TestNavBar:
             self.nb.click_watches_lnk()
             self.conf_head = self.nb.capt_header_title()
             assert self.conf_head == "Watches"
+            self.nb.click_training_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Training"
+            self.nb.click_vid_dwnld_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Video Download"
+            self.nb.click_sale_lnk()
+            self.conf_head = self.nb.capt_header_title()
+            assert self.conf_head == "Sale"
             self.driver.quit()
             self.logger.info("*** Test_011_Nav_Bar_Field Passed ***")
 

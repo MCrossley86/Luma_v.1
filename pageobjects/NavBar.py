@@ -1,6 +1,5 @@
 # Import the necessary modules
 from utilities.WaitForElements import wait_for_element
-from utilities.WaitForElements import element_clickable
 from selenium.webdriver import ActionChains
 from utilities.CustomLog import LogGenerator
 
@@ -29,7 +28,11 @@ class NavBarHP:
     bags_lnk = "(//a[@id='ui-id-25'])[1]"
     fit_equip_lnk = "(//a[@id='ui-id-26'])[1]"
     watch_lnk = "(//a[@id='ui-id-27'])[1]"
+    train_lnk = "(//a[@id='ui-id-7'])[1]"
+    vid_lnk = "(//a[@id='ui-id-28'])[1]"
+    sale_lnk = "(//a[@id='ui-id-8'])[1]"
     head_conf = "//span[@class='base']"
+    capt_url = ""
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -239,6 +242,25 @@ class NavBarHP:
         comp_element = wait_for_element(self.driver, self.watch_lnk)
         act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(comp_element).click().perform()
 
+    def click_training_lnk(self):
+        # Log the action and click the "Training" link
+        self.logger.debug(f"Clicking the Training link")
+        wait_for_element(self.driver, self.train_lnk).click()
+
+    def click_vid_dwnld_lnk(self):
+        # Log the action and click on "video download" link in the training tab in the nav bar
+        self.logger.debug(f"Clicking on the bottoms link")
+        act = ActionChains(self.driver)
+        hover_element_1 = wait_for_element(self.driver, self.g_lnk)
+        hover_element_2 = wait_for_element(self.driver, self.train_lnk)
+        comp_element = wait_for_element(self.driver, self.vid_lnk)
+        act.move_to_element(hover_element_1).move_to_element(hover_element_2).move_to_element(comp_element).click().perform()
+
+    def click_sale_lnk(self):
+        # Log the action and click the "Sale" link
+        self.logger.debug(f"Clicking the Sale link")
+        wait_for_element(self.driver, self.sale_lnk).click()
+
     def capt_header_title(self):
         # Capture the header title text and handle any exceptions
         try:
@@ -246,4 +268,8 @@ class NavBarHP:
         except Exception as e:
             self.logger.error(f"Error retrieving head title: {e}")
             return None
+
+    def capture_url(self):
+        # Capture the url
+        return self.driver.current_url
 

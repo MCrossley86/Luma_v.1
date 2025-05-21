@@ -109,10 +109,11 @@
       - "What's New"
       - "Women" and submenu
       - "Men" and submenu
-      - "Gear" and submenu - IN PROGRESS
+      - "Gear" and submenu
+      - "Training" and submenu
+      - "Sale"
 
 25. **Current Project**
-    - Validate the Navigation Bar - IN PROGRESS
     - Investigate why the automation log is creating new logs - IN PROGRESS
        
 26. **Future Projects**
@@ -124,6 +125,6 @@
     - Verify checkout functionality - COMPLETE
     - Validate reset password functionality - COMPLETE
     - Validate search functionality - COMPLETE
-    - Validate the Navigation Bar - CURRENT
+    - Validate the Navigation Bar - COMPLETE
     - Validate the account menu functionality 
     - Expand on the login page by creating a data-driven test
