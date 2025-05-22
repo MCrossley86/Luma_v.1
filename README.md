@@ -115,7 +115,7 @@
 
 25. **Current Project**
     - Investigate why the automation log is creating new logs - IN PROGRESS
-    - Investigate why Tests_001,006 and 010 failed - IN PROGRESS 
+    - Investigate how to reset password and add it to the file - IN PROGRESS
        
 26. **Future Projects**
     - Validate login functionality - COMPLETE

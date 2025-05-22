@@ -33,7 +33,7 @@ class LogGenerator:
 
         # Log the action and create a new file handler with the desired format
         logging.debug("Adding new file handler to the logger")
-        file_handler = RotatingFileHandler(log_file, mode='a', maxBytes=5*1024*1024, backupCount=3)
+        file_handler = RotatingFileHandler(log_file, mode='w', maxBytes=5*1024*1024, backupCount=3)
         file_handler.setLevel(logging.DEBUG)
         formatter = logging.Formatter(
                 '%(asctime)s: %(levelname)s: %(message)s',
