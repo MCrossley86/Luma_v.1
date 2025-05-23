@@ -116,6 +116,7 @@
 25. **Current Project**
     - Investigate why the automation log is creating new logs - IN PROGRESS
     - Investigate how to reset password and add it to the file - IN PROGRESS
+    - Organize the test cases and page object files so that they're more cohesive and streamlined - IN PROGRESS 
        
 26. **Future Projects**
     - Validate login functionality - COMPLETE
