@@ -3,7 +3,7 @@ from utilities.WaitForElements import wait_for_element
 from selenium.webdriver import ActionChains
 from utilities.CustomLog import LogGenerator
 
-class MainPage:
+class HomePage:
     # Define locators for webpage elements
     lnk_account_xpath = "//div[@class='panel header']//a[normalize-space()='Create an Account']"
     lnk_sign_xpath = "//div[@class='panel header']//a[contains(text(),'Sign In')]"
@@ -16,7 +16,7 @@ class MainPage:
         self.driver = driver
         self.logger = LogGenerator.get_logger()
 
-    def click_account(self):
+    def click_create_account(self):
         # Log the action and click the "Create an Account" link
         self.logger.debug(f"Clicking create an account link")
         wait_for_element(self.driver, self.lnk_account_xpath).click()
