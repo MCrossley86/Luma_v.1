@@ -10,7 +10,6 @@ class RegPage:
     txt_field_password = "//input[@id='password']"
     txt_field_confirm = "//input[@id='password-confirmation']"
     btn_create = "//button[@title='Create an Account']"
-    txt_conf = "//span[@class='base']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -46,11 +45,3 @@ class RegPage:
         # Log the action and click the "Create an Account" button
         self.logger.debug(f"Clicking create an account")
         wait_for_element(self.driver, self.btn_create).click()
-
-    def capt_header_title(self):
-        # Capture the header title text and handle any exceptions
-        try:
-            return wait_for_element(self.driver, self.txt_conf).text
-        except Exception as e:
-            self.logger.error(f"Error retrieving head title: {e}")
-            return None

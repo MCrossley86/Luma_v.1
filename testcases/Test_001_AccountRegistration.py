@@ -1,6 +1,7 @@
 # Import the necessary modules
 from pageobjects.AccountRegistration import RegPage
 from pageobjects.HomePage import MainPage
+from pageobjects.MyAccount import MyAccount
 from utilities.RandomString import random_string_generator
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
@@ -45,8 +46,14 @@ class TestAccountReg:
 
             # Log the action and check for the header title
             self.logger.info("*** Check for header title ***")
-            self.conf_head=self.rp.capt_header_title()
+            self.ma = MyAccount(self.driver)
+            self.conf_head=self.ma.capt_header_title()
             assert self.conf_head=="My Account"
+
+            # Log the action and check the URL
+            self.logger.info("*** Check for the URL ***")
+            self.capt_url = self.ma.capture_url()
+            assert self.capt_url == "https://magento.softwaretestingboard.com/customer/account/"
             self.driver.quit()
             self.logger.info("*** Test_001_Account_Registration Passed ***")
 

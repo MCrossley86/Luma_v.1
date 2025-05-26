@@ -4,6 +4,7 @@ from utilities.CustomLog import LogGenerator
 
 class MyAccount:
     # Define locators for webpage elements
+    txt_conf = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='My Account']"
     lnk_welcome_xpath = "//div[@class='panel header']//button[@type='button']"
     lnk_my_account_xpath = "//div[@aria-hidden='false']//a[normalize-space()='My Account']"
     lnk_my_wishlist_xpath = "//div[@aria-hidden='false']//a[normalize-space()='My Wish List']"
@@ -50,4 +51,16 @@ class MyAccount:
         except Exception as e:
             print(f"An error occurred: {e}")
             return False
+
+    def capt_header_title(self):
+        # Capture the header title text and handle any exceptions
+        try:
+            return wait_for_element(self.driver, self.txt_conf).text
+        except Exception as e:
+            self.logger.error(f"Error retrieving head title: {e}")
+            return None
+
+    def capture_url(self):
+        # Capture the url
+        return self.driver.current_url
 
