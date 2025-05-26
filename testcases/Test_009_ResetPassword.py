@@ -1,11 +1,11 @@
 # Import the necessary modules
-from pageobjects.HomePage import MainPage
+from pageobjects.HomePage import HomePage
 from pageobjects.CustomerLogin import CustLogin
 from pageobjects.ForgotYourPassword import ForgotPwd
 from pageobjects.Gmail import GmailAccount
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
-import pytest
+# import pytest
 import os
 
 class TestResetPwd:
@@ -32,8 +32,8 @@ class TestResetPwd:
 
             # Log the action and click the "Sign In" link
             self.logger.info("*** Click Sign In ***")
-            self.mp=MainPage(self.driver)
-            self.mp.click_sign()
+            self.hp = HomePage(self.driver)
+            self.hp.click_sign()
 
             # Log the action and click "Forgot Your Password"
             self.logger.info("*** Click Forgot Your Password ***")

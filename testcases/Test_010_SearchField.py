@@ -1,5 +1,5 @@
 # Import the necessary modules
-from pageobjects.HomePage import MainPage
+from pageobjects.HomePage import HomePage
 from pageobjects.SearchResults import SearchResults
 from utilities.ReadProperties import ReadConfig
 from utilities.CustomLog import LogGenerator
@@ -28,10 +28,10 @@ class TestSearchField:
 
             # Log the action and search for a specific item
             self.logger.info("*** Clicking in the search field and searching ***")
-            self.mp = MainPage(self.driver)
-            self.mp.click_search_fld()
-            self.mp.set_search_item("Argus")
-            self.mp.select_search_item()
+            self.hp = HomePage(self.driver)
+            self.hp.click_search_fld()
+            self.hp.set_search_item("Argus")
+            self.hp.select_search_item()
 
             # Log the action and check for the header title
             self.logger.info("*** Checking for header title ***")

@@ -1,5 +1,5 @@
 # Import the necessary modules
-from pageobjects.HomePage import MainPage
+from pageobjects.HomePage import HomePage
 from pageobjects.CustomerLogin import CustLogin
 from pageobjects.MyAccount import MyAccount
 from utilities.CustomLog import LogGenerator
@@ -28,14 +28,14 @@ class TestLoginDDT:
         self.driver.maximize_window()
 
         # Initialize page objects
-        self.mp = MainPage(self.driver)
+        self.hp = HomePage(self.driver)
         self.cl = CustLogin(self.driver)
         self.ma = MyAccount(self.driver)
 
         # Log the action and iterate through the rows in the Excel sheet
         self.logger.info("*** Loop Start ***")
         for r in range(2,self.rows+1):
-            self.mp.click_sign()
+            self.hp.click_sign()
 
             # Log the action and read email, password, and expected result from the Excel sheet
             self.logger.info("*** Read data from the Excel sheet ***")

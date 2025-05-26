@@ -1,6 +1,6 @@
 # Import the necessary modules
 from pageobjects.AccountRegistration import RegPage
-from pageobjects.HomePage import MainPage
+from pageobjects.HomePage import HomePage
 from pageobjects.MyAccount import MyAccount
 from utilities.RandomString import random_string_generator
 from utilities.ReadProperties import ReadConfig
@@ -30,8 +30,8 @@ class TestAccountReg:
 
             # Log the action and click the create an account link
             self.logger.info("*** Click Create an Account link ***")
-            self.mp=MainPage(self.driver)
-            self.mp.click_account()
+            self.hp=HomePage(self.driver)
+            self.hp.click_create_account()
 
             # Log the action and enter the required credentials into the corresponding fields
             self.logger.info("*** Enter required credentials and create ***")
