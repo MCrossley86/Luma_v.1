@@ -1,6 +1,7 @@
 # Import the necessary modules
 from pageobjects.HomePage import HomePage
 from pageobjects.CustomerLogin import CustLogin
+from pageobjects.MyAccount import MyAccount
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
@@ -16,7 +17,7 @@ class TestLogin:
     @pytest.mark.sanity
     def test_login(self, setup):
         # Log the action, define and create a path to save screenshots
-        self.logger.info("*** Test_002_Login Started ***")
+        self.logger.info("*** Test_002_Login_Logout Started ***")
         self.driver = setup
         screenshots_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'screenshots')
         if not os.path.exists(screenshots_path):
@@ -44,13 +45,24 @@ class TestLogin:
             self.logger.info("*** Check for header title ***")
             self.conf_title = self.cl.get_home_page_title()
             assert self.conf_title=="Home Page"
+
+            # Log the action and log out via the navigation bar
+            self.logger.info("*** Log out of the application ***")
+            self.ma = MyAccount(self.driver)
+            self.ma.click_welcome()
+            self.ma.click_sign_out()
+
+            # Log the action and check for the "signed out" message
+            self.logger.info("*** Check for sign out message ***")
+            self.conf_sign_out = self.ma.get_sign_out_msg()
+            assert self.conf_sign_out == "You are signed out"
             self.driver.quit()
-            self.logger.info("*** Test_002_Login Passed ***")
+            self.logger.info("*** Test_002_Login_Logout Passed ***")
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure
-            self.logger.info("*** Test_002_Login Failed ***")
-            screenshot_filename = os.path.join(screenshots_path, "test_login.png")
+            self.logger.info("*** Test_002_Login_Logout Failed ***")
+            screenshot_filename = os.path.join(screenshots_path, "test_login_logout.png")
             self.driver.save_screenshot(screenshot_filename)
             raise e
-        self.logger.info("*** Test_002_Login Complete ***")
+        self.logger.info("*** Test_002_Login_Logout Complete ***")

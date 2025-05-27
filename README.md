@@ -65,10 +65,11 @@
 15. **Automated Login Test Case**
     - Developed page object class for the login "CustomerLogin".
     - Created a test case "Test_002_Login" to check that a user can log in.
+    - Test_002_Login has now been updated to Test_002_Login_Logout to include both logging in and out
 
-16. **Automated Logout Test Case**
-    - Developed page object class for the logout "MyAccount".
-    - Created a test case "Test_003_Logout" to check that a user can log out.
+~~16. **Automated Logout Test Case**~~ - DEPRECATED
+    ~~- Developed page object class for the logout "MyAccount".
+    - Created a test case "Test_003_Logout" to check that a user can log out.~~
 
 17. **Automated Login DDT Test Case**
     - Developed test class for Data-Driven Testing (DDT) login.
