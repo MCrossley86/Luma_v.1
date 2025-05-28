@@ -1,7 +1,7 @@
 # Import the necessary modules
 from pageobjects.HomePage import HomePage
 from pageobjects.CustomerLogin import CustLogin
-from pageobjects.MyAccount import MyAccount
+from pageobjects.NavBar import NavBarHP
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
@@ -31,31 +31,37 @@ class TestLogin:
 
             # Log the action and click the "Sign In" link
             self.logger.info("*** Click Sign In ***")
-            self.hp=HomePage(self.driver)
-            self.hp.click_sign()
-
-            # Log the action and enter the required credentials into the corresponding fields
-            self.logger.info("*** Sign into the application ***")
-            self.cl=CustLogin(self.driver)
-            self.cl.enter_email(self.user_email)
-            self.cl.enter_pwd(self.password)
-            self.cl.click_signin()
+            self.hp = HomePage(self.driver)
+            self.hp.click_sign_in_lnk()
 
             # Log the action and check for the header title
             self.logger.info("*** Check for header title ***")
-            self.conf_title = self.cl.get_home_page_title()
-            assert self.conf_title=="Home Page"
+            self.cl = CustLogin(self.driver)
+            self.cl_head = self.cl.capt_cl_head()
+            assert self.cl_head == "Customer Login"
+
+            # Log the action and enter the required credentials into the corresponding fields
+            self.logger.info("*** Entering the required credentials ***")
+            self.cl.enter_email(self.user_email)
+            self.cl.enter_pwd(self.password)
+            self.cl.click_sign_in_btn()
+
+            # Log the action and check for the header title
+            self.logger.info("*** Check for header title ***")
+            self.hp_head = self.hp.capt_hp_head()
+            assert self.hp_head == "Home Page"
 
             # Log the action and log out via the navigation bar
             self.logger.info("*** Log out of the application ***")
-            self.ma = MyAccount(self.driver)
-            self.ma.click_welcome()
-            self.ma.click_sign_out()
+            self.nb = NavBarHP(self.driver)
+            self.nb.click_welcome_drop()
+            self.nb.click_sign_out()
 
-            # Log the action and check for the "signed out" message
-            self.logger.info("*** Check for sign out message ***")
-            self.conf_sign_out = self.ma.get_sign_out_msg()
-            assert self.conf_sign_out == "You are signed out"
+            # Log the action and check for the header title and URL
+            self.logger.info("*** Check for header title and URL ***")
+            self.so_head = self.hp.capt_so_head()
+            self.capt_url = self.hp.capture_url()
+            assert self.so_head == "You are signed out" and self.capt_url == "https://magento.softwaretestingboard.com/customer/account/logoutSuccess/"
             self.driver.quit()
             self.logger.info("*** Test_002_Login_Logout Passed ***")
 

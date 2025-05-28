@@ -35,7 +35,7 @@ class TestLoginDDT:
         # Log the action and iterate through the rows in the Excel sheet
         self.logger.info("*** Loop Start ***")
         for r in range(2,self.rows+1):
-            self.hp.click_sign()
+            self.hp.click_sign_in_lnk()
 
             # Log the action and read email, password, and expected result from the Excel sheet
             self.logger.info("*** Read data from the Excel sheet ***")
@@ -47,8 +47,8 @@ class TestLoginDDT:
             self.logger.info("*** Sign into the application ***")
             self.cl.enter_email(self.email)
             self.cl.enter_pwd(self.password)
-            self.cl.click_signin()
-            self.target_page = self.cl.is_my_account_page_exists()
+            self.cl.click_sign_in_btn()
+            self.target_page = self.ma.capt_header_title()
 
             # Log the action and determine pass/fail status based on the expected result
             self.logger.info("*** Log login results ***")

@@ -30,30 +30,26 @@ class TestAccountReg:
 
             # Log the action and click the create an account link
             self.logger.info("*** Click Create an Account link ***")
-            self.hp=HomePage(self.driver)
+            self.hp = HomePage(self.driver)
             self.hp.click_create_account()
 
             # Log the action and enter the required credentials into the corresponding fields
             self.logger.info("*** Enter required credentials and create ***")
-            self.rp=RegPage(self.driver)
+            self.rp = RegPage(self.driver)
             self.rp.set_first_name("Jane")
             self.rp.set_last_name("Doe")
-            self.email=random_string_generator()+'@gmail.com'
+            self.email = random_string_generator()+'@gmail.com'
             self.rp.set_email(self.email)
             self.rp.set_password("abc123DEF")
             self.rp.confirm_password("abc123DEF")
-            self.rp.click_create()
+            self.rp.click_create_btn()
 
-            # Log the action and check for the header title
-            self.logger.info("*** Check for header title ***")
+            # Log the action and check for the header title and URL
+            self.logger.info("*** Check for header title and URL ***")
             self.ma = MyAccount(self.driver)
-            self.conf_head=self.ma.capt_header_title()
-            assert self.conf_head=="My Account"
-
-            # Log the action and check the URL
-            self.logger.info("*** Check for the URL ***")
+            self.ma_head=self.ma.capt_ma_head()
             self.capt_url = self.ma.capture_url()
-            assert self.capt_url == "https://magento.softwaretestingboard.com/customer/account/"
+            assert self.ma_head == "My Account" and self.capt_url == "https://magento.softwaretestingboard.com/customer/account/"
             self.driver.quit()
             self.logger.info("*** Test_001_Account_Registration Passed ***")
 
