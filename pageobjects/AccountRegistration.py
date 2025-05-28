@@ -41,7 +41,7 @@ class RegPage:
         self.logger.debug(f"Confirming password")
         wait_for_element(self.driver, self.txt_field_confirm).send_keys(confirm_password)
 
-    def click_create(self):
+    def click_create_btn(self):
         # Log the action and click the "Create an Account" button
         self.logger.debug(f"Clicking create an account")
         wait_for_element(self.driver, self.btn_create).click()

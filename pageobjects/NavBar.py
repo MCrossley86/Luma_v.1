@@ -5,6 +5,8 @@ from utilities.CustomLog import LogGenerator
 
 class NavBarHP:
     # Define locators for webpage elements
+    lnk_welcome_xpath = "//div[@class='panel header']//button[@type='button']"
+    lnk_sign_out_xpath = "//div[@aria-hidden='false']//a[normalize-space()='Sign Out']"
     whats_new_lnk = "(//a[@id='ui-id-3'])[1]"
     w_lnk = "(//a[@id='ui-id-4'])[1]"
     w_tops_lnk = "(//a[@id='ui-id-9'])[1]"
@@ -38,6 +40,16 @@ class NavBarHP:
         # Initialize the driver and logger
         self.driver = driver
         self.logger = LogGenerator.get_logger()
+
+    def click_welcome_drop(self):
+        # Log the action and click the "Welcome" dropdown arrow
+        self.logger.debug(f"Clicking Welcome dropdown arrow")
+        wait_for_element(self.driver, self.lnk_welcome_xpath).click()
+
+    def click_sign_out(self):
+        # Log the action and click the "Sign Out" link
+        self.logger.debug(f"Clicking Sign Out link")
+        wait_for_element(self.driver, self.lnk_sign_out_xpath).click()
 
     def click_whats_new_lnk(self):
         # Log the action and click the "What's New" link
