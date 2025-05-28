@@ -62,7 +62,7 @@
 
     **Continuous Integration**
 
-15. **Automated Login Test Case**
+15. **Automated Login/Logout Test Case**
     - Developed page object class for the login "CustomerLogin".
     - Created a test case "Test_002_Login" to check that a user can log in.
     - Test_002_Login has now been updated to Test_002_Login_Logout to include both logging in and out
