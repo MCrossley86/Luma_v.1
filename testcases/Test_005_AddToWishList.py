@@ -34,14 +34,14 @@ class TestAddToCompare:
             # Log the action and click the "Sign In" link
             self.logger.info("*** Click Sign In ***")
             self.hp = HomePage(self.driver)
-            self.hp.click_sign()
+            self.hp.click_sign_in_lnk()
 
             # Log the action and enter the required credentials into the corresponding fields
             self.logger.info("*** Sign into the application ***")
             self.cl = CustLogin(self.driver)
             self.cl.enter_email(self.user_email)
             self.cl.enter_pwd(self.password)
-            self.cl.click_signin()
+            self.cl.click_sign_in_btn()
 
             # Log the action and click on the Yoga collection link
             self.logger.info("*** Click on the Yoga collection link ***")
