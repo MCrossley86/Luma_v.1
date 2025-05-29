@@ -9,6 +9,7 @@ class HomePage:
     lnk_sign_xpath = "//div[@class='panel header']//a[contains(text(),'Sign In')]"
     lnk_account_xpath = "//div[@class='panel header']//a[normalize-space()='Create an Account']"
     sign_out_conf = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='You are signed out']"
+    luma_yoga_xpath = "//span[@class='info']"
     search_fld = "//input[@id='search']"
     hover_dropdown = "(//li[@id='qs-option-0'])[1]"
     click_dropdown = "(//li[@id='qs-option-1'])[1]"
@@ -48,6 +49,11 @@ class HomePage:
     def capture_url(self):
         # Capture the url
         return self.driver.current_url
+
+    def click_luma_yoga_link(self):
+        # Log the action and click the "New Luma Collection" link
+        self.logger.debug(f"Clicking new luma collection link")
+        wait_for_element(self.driver, self.luma_yoga_xpath).click()
 
     def click_search_fld(self):
         # Log the action and click in the search field

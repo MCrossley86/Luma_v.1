@@ -1,7 +1,6 @@
 # Import the necessary modules
 from pageobjects.HomePage import HomePage
 from pageobjects.CustomerLogin import CustLogin
-from pageobjects.MyAccount import MyAccount
 from pageobjects.YogaCollection import YogaCollection
 from pageobjects.WishList import MyWishList
 from utilities.CustomLog import LogGenerator
@@ -45,8 +44,7 @@ class TestAddToCompare:
 
             # Log the action and click on the Yoga collection link
             self.logger.info("*** Click on the Yoga collection link ***")
-            self.ma = MyAccount(self.driver)
-            self.ma.click_promo_link()
+            self.hp.click_luma_yoga_link()
 
             # Log the action and select Fiona wish list icon
             self.logger.info("*** Click on Fiona wish list icon")

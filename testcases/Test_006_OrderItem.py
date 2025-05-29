@@ -1,7 +1,6 @@
 # Import the necessary modules
 from pageobjects.HomePage import HomePage
 from pageobjects.CustomerLogin import CustLogin
-from pageobjects.MyAccount import MyAccount
 from pageobjects.YogaCollection import YogaCollection
 from pageobjects.EchoFit import EchoFit
 from pageobjects.ShoppingCart import ShoppingCart
@@ -48,9 +47,8 @@ class TestAddToCart:
 
             # Log the action and click on the Yoga collection link
             self.logger.info("*** Click on the Yoga collection link ***")
-            self.ma = MyAccount(self.driver)
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight/4);")
-            self.ma.click_promo_link()
+            self.hp.click_luma_yoga_link()
 
             # Log the action and select Echo Fit Compression Short
             self.logger.info("*** Click on Echo Fit Compression Short ***")
@@ -75,8 +73,8 @@ class TestAddToCart:
             # Log the action and proceed to order the item
             self.logger.info("*** Order the item *** ")
             self.os = OrderSum(self.driver)
-            self.os.slct_ship_mthd()
             self.os.scroll_to_bottom()
+            self.os.slct_ship_mthd()
             self.os.clck_nxt()
             self.os.scroll_to_bottom()
             self.os.clck_order()

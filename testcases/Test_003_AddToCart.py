@@ -1,7 +1,5 @@
 # Import the necessary modules
 from pageobjects.HomePage import HomePage
-from pageobjects.CustomerLogin import CustLogin
-from pageobjects.MyAccount import MyAccount
 from pageobjects.YogaCollection import YogaCollection
 from pageobjects.EchoFit import EchoFit
 from pageobjects.ShoppingCart import ShoppingCart
@@ -32,23 +30,11 @@ class TestAddToCart:
             self.driver.get(self.baseURL)
             self.driver.maximize_window()
 
-            # Log the action and click the "Sign In" link
-            self.logger.info("*** Click Sign In ***")
-            self.hp = HomePage(self.driver)
-            self.hp.click_sign_in_lnk()
-
-            # Log the action and enter the required credentials into the corresponding fields
-            self.logger.info("*** Sign into the application ***")
-            self.cl = CustLogin(self.driver)
-            self.cl.enter_email(self.user_email)
-            self.cl.enter_pwd(self.password)
-            self.cl.click_sign_in_btn()
-
             # Log the action and click on the Yoga collection link
             self.logger.info("*** Click on the Yoga collection link ***")
-            self.ma = MyAccount(self.driver)
+            self.hp = HomePage(self.driver)
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight/4);")
-            self.ma.click_promo_link()
+            self.hp.click_luma_yoga_link()
 
             # Log the action and select Echo Fit Compression Short
             self.logger.info("*** Click on Echo Fit Compression Short")

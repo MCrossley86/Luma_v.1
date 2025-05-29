@@ -33,7 +33,7 @@ class TestResetPwd:
             # Log the action and click the "Sign In" link
             self.logger.info("*** Click Sign In ***")
             self.hp = HomePage(self.driver)
-            self.hp.click_sign()
+            self.hp.click_sign_in_lnk()
 
             # Log the action and click "Forgot Your Password"
             self.logger.info("*** Click Forgot Your Password ***")
