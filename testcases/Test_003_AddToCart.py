@@ -1,7 +1,6 @@
 # Import the necessary modules
 from pageobjects.HomePage import HomePage
 from pageobjects.YogaCollection import YogaCollection
-from pageobjects.EchoFit import EchoFit
 from pageobjects.ShoppingCart import ShoppingCart
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
@@ -25,6 +24,12 @@ class TestAddToCart:
             os.makedirs(screenshots_path)
 
         try:
+            # Log the action and import the classes from the Page Object files
+            self.logger.info("*** Adding Classes from Page Object files ***")
+            self.hp = HomePage(self.driver)
+            self.yc = YogaCollection(self.driver)
+            self.sc = ShoppingCart(self.driver)
+
             # Log the action and navigate to the main page
             self.logger.info("*** Navigate to the main page ***")
             self.driver.get(self.baseURL)
@@ -32,28 +37,16 @@ class TestAddToCart:
 
             # Log the action and click on the Yoga collection link
             self.logger.info("*** Click on the Yoga collection link ***")
-            self.hp = HomePage(self.driver)
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight/4);")
             self.hp.click_luma_yoga_link()
 
-            # Log the action and select Echo Fit Compression Short
+            # Log the action and add Echo Fit Compression Shorts
             self.logger.info("*** Click on Echo Fit Compression Short")
-            self.yc = YogaCollection(self.driver)
-            self.yc.click_echo_link()
-
-            # Log the action and select the required fields and add and navigate to cart
-            self.logger.info("*** Adding to cart and navigating to cart page ***")
-            self.ef = EchoFit(self.driver)
-            self.ef.select_size_28()
-            self.ef.select_colour_blue()
-            self.ef.clear_quantity_field()
-            self.ef.set_quantity(3)
-            self.ef.add_to_cart()
-            self.ef.click_shopping_cart_link()
+            self.yc.add_echo_shorts_to_cart()
 
             # Log the action and check that the item has been added to the cart
             self.logger.info("*** Navigate to Shopping Cart webpage and check for the item in the cart")
-            self.sc = ShoppingCart(self.driver)
+            self.yc.click_shop_cart_link()
             self.head_title = self.sc.capt_head_title()
             self.sc_added_item = self.sc.capt_added_item()
             assert self.head_title == "Shopping Cart" and self.sc_added_item

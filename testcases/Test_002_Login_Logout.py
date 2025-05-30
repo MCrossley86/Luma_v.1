@@ -24,6 +24,12 @@ class TestLogin:
             os.makedirs(screenshots_path)
 
         try:
+            # Log the action and import the classes from the Page Object files
+            self.logger.info("*** Adding Classes from Page Object files ***")
+            self.hp = HomePage(self.driver)
+            self.cl = CustLogin(self.driver)
+            self.nb = NavBarHP(self.driver)
+
             # Log the action and navigate to the main page
             self.logger.info("*** Navigate to the main page ***")
             self.driver.get(self.baseURL)
@@ -31,12 +37,10 @@ class TestLogin:
 
             # Log the action and click the "Sign In" link
             self.logger.info("*** Click Sign In ***")
-            self.hp = HomePage(self.driver)
             self.hp.click_sign_in_lnk()
 
             # Log the action and check for the header title
             self.logger.info("*** Check for header title ***")
-            self.cl = CustLogin(self.driver)
             self.cl_head = self.cl.capt_cl_head()
             assert self.cl_head == "Customer Login"
 
@@ -53,7 +57,6 @@ class TestLogin:
 
             # Log the action and log out via the navigation bar
             self.logger.info("*** Log out of the application ***")
-            self.nb = NavBarHP(self.driver)
             self.nb.click_welcome_drop()
             self.nb.click_sign_out()
 

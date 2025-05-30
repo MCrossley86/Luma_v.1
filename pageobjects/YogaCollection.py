@@ -7,7 +7,10 @@ class YogaCollection:
     # Define locators for webpage elements
     echo_lnk = "//a[@class='product photo product-item-photo']//img[@alt='Echo Fit Compression Short']"
     comparison_lnk = "//a[normalize-space()='comparison list']"
+    sze_28 = "//div[@option-label='28']"
+    clr_blck = "//div[@option-label='Black']"
     echo_add_to_cart = "/html[1]/body[1]/div[2]/main[1]/div[3]/div[1]/div[3]/ol[1]/li[1]/div[1]/div[1]/div[4]/div[1]/div[1]/form[1]/button[1]/span[1]"
+    shop_cart_lnk = "(//a[normalize-space()='shopping cart'])[1]"
     echo_hover = "//body/div[@class='page-wrapper']/main[@id='maincontent']/div[@class='columns']/div[@class='column main']/div[@class='products wrapper grid products-grid']/ol[@class='products list items product-items']/li[1]/div[1]"
     echo_add_to_comp = "(//a[@title='Add to Compare'])[1]"
     gwen_hover = "//body/div[@class='page-wrapper']/main[@id='maincontent']/div[@class='columns']/div[@class='column main']/div[@class='products wrapper grid products-grid']/ol[@class='products list items product-items']/li[2]/div[1]"
@@ -54,6 +57,21 @@ class YogaCollection:
         hover_element = wait_for_element(self.driver, self.fiona_hover)
         comp_element = wait_for_element(self.driver, self.fiona_add_to_wishlist)
         act.move_to_element(hover_element).move_to_element(comp_element).click().perform()
+
+    def add_echo_shorts_to_cart(self):
+        # Log the action and click on "add to wishlist" icon
+        self.logger.debug(f"Clicking on add to wishlist icon")
+        act = ActionChains(self.driver)
+        echo_img_hover = wait_for_element(self.driver, self.echo_hover)
+        click_element_sze = wait_for_element(self.driver, self.sze_28)
+        click_element_black = wait_for_element(self.driver, self.clr_blck)
+        click_element_add = wait_for_element(self.driver, self.echo_add_to_cart)
+        act.move_to_element(echo_img_hover).move_to_element(click_element_sze).click().move_to_element(click_element_black).click().move_to_element(click_element_add).click().perform()
+
+    def click_shop_cart_link(self):
+        # Log the action and click on the designated link
+        self.logger.debug(f"Clicking on the echo fit image")
+        wait_for_element(self.driver, self.shop_cart_lnk).click()
 
     def comparison_list_lnk(self):
         # Log the action and click on "comparison list" link
