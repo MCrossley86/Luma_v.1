@@ -49,6 +49,10 @@ class CompareProducts:
             print(f"An error occurred: {e}")
             return False
 
+    def capture_url(self):
+        # Capture the url
+        return self.driver.current_url
+
     def echo_click_x(self):
         # Log the action and click the "X" button
         self.logger.debug(f"Clicking X")

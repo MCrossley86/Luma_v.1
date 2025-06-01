@@ -37,6 +37,10 @@ class ShoppingCart:
             print(f"An error occurred: {e}")
             return False
 
+    def capture_url(self):
+        # Capture the url
+        return self.driver.current_url
+
     def click_trash_icon(self):
         # Log the action and click the trash icon
         self.logger.debug(f"Clicking the trash icon")

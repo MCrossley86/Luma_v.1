@@ -6,7 +6,7 @@ from utilities.CustomLog import LogGenerator
 class YogaCollection:
     # Define locators for webpage elements
     echo_lnk = "//a[@class='product photo product-item-photo']//img[@alt='Echo Fit Compression Short']"
-    comparison_lnk = "//a[normalize-space()='comparison list']"
+    comparison_lnk = "//a[text()='comparison list']"
     sze_28 = "//div[@option-label='28']"
     clr_blck = "//div[@option-label='Black']"
     echo_add_to_cart = "/html[1]/body[1]/div[2]/main[1]/div[3]/div[1]/div[3]/ol[1]/li[1]/div[1]/div[1]/div[4]/div[1]/div[1]/form[1]/button[1]/span[1]"
