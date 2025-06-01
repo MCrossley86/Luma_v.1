@@ -17,7 +17,7 @@ class TestAddToCart:
     @pytest.mark.sanity
     def test_add_to_cart(self, setup):
         # Log the action, define and create a path to save screenshots
-        self.logger.info("*** Test_005_AddToCart started ***")
+        self.logger.info("*** Test_003_AddToCart started ***")
         self.driver = setup
         screenshots_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'screenshots')
         if not os.path.exists(screenshots_path):
@@ -44,23 +44,24 @@ class TestAddToCart:
             self.logger.info("*** Click on Echo Fit Compression Short")
             self.yc.add_echo_shorts_to_cart()
 
-            # Log the action and check that the item has been added to the cart
+            # Log the action and check that the item has been added to the cart as well as navigated to the right page
             self.logger.info("*** Navigate to Shopping Cart webpage and check for the item in the cart")
             self.yc.click_shop_cart_link()
             self.head_title = self.sc.capt_head_title()
             self.sc_added_item = self.sc.capt_added_item()
-            assert self.head_title == "Shopping Cart" and self.sc_added_item
+            self.capt_url = self.sc.capture_url()
+            assert self.head_title == "Shopping Cart" and self.sc_added_item and self.capt_url == "https://magento.softwaretestingboard.com/checkout/cart/"
 
             # Log the action and remove the items from the cart
             self.logger.info("*** Removing items from cart ***")
             self.sc.click_trash_icon()
             self.driver.quit()
-            self.logger.info("*** Test_005_AddToCart Passed ***")
+            self.logger.info("*** Test_003_AddToCart Passed ***")
 
         except Exception as e:
             # Log the action and capture the screenshot of any failure
-            self.logger.info("*** Test_005_AddToCart Failed ***")
+            self.logger.info("*** Test_003_AddToCart Failed ***")
             screenshot_filename = os.path.join(screenshots_path, "test_add_to_cart.png")
             self.driver.save_screenshot(screenshot_filename)
             raise e
-        self.logger.info("*** Test_005_AddToCart Complete ***")
+        self.logger.info("*** Test_003_AddToCart Complete ***")

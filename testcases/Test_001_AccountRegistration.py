@@ -48,9 +48,9 @@ class TestAccountReg:
             self.rp.confirm_password("abc123DEF")
             self.rp.click_create_btn()
 
-            # Log the action and check for the header title and URL
+            # Log the action and check that the user has been navigated to the right page
             self.logger.info("*** Check for header title and URL ***")
-            self.ma_head=self.ma.capt_ma_head()
+            self.ma_head = self.ma.capt_ma_head()
             self.capt_url = self.ma.capture_url()
             assert self.ma_head == "My Account" and self.capt_url == "https://magento.softwaretestingboard.com/customer/account/"
             self.driver.quit()

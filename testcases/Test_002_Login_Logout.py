@@ -50,17 +50,18 @@ class TestLogin:
             self.cl.enter_pwd(self.password)
             self.cl.click_sign_in_btn()
 
-            # Log the action and check for the header title
+            # Log the action and check that the user has been navigated to the right page
             self.logger.info("*** Check for header title ***")
             self.hp_head = self.hp.capt_hp_head()
-            assert self.hp_head == "Home Page"
+            self.capt_url = self.hp.capture_url()
+            assert self.hp_head == "Home Page" and self.capt_url == "https://magento.softwaretestingboard.com/"
 
             # Log the action and log out via the navigation bar
             self.logger.info("*** Log out of the application ***")
             self.nb.click_welcome_drop()
             self.nb.click_sign_out()
 
-            # Log the action and check for the header title and URL
+            # Log the action and check that the user has been navigated to the right page
             self.logger.info("*** Check for header title and URL ***")
             self.so_head = self.hp.capt_so_head()
             self.capt_url = self.hp.capture_url()
