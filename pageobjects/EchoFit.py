@@ -8,7 +8,7 @@ class EchoFit:
     echo_colour_blue = "//div[contains(@option-label,'Blue')]"
     echo_quantity = "//input[@id='qty']"
     echo_add_to_cart_btn = "//button[@id='product-addtocart-button']"
-    echo_cart_link = "//a[normalize-space()='shopping cart']"
+    shop_cart_link = "//a[normalize-space()='shopping cart']"
 
     def __init__(self, driver):
         # Initialize the driver and logger
@@ -43,4 +43,4 @@ class EchoFit:
     def click_shopping_cart_link(self):
         # Log the action and click on "shopping cart" link
         self.logger.debug(f"Clicking on shopping cart link")
-        wait_for_element(self.driver, self.echo_cart_link).click()
+        wait_for_element(self.driver, self.shop_cart_link).click()

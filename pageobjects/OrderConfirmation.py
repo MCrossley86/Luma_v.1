@@ -19,3 +19,7 @@ class OrderConf:
         except Exception as e:
             print(f"An error occurred: {e}")
             return False
+
+    def capture_url(self):
+        # Capture the url
+        return self.driver.current_url
