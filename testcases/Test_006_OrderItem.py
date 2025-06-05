@@ -10,7 +10,6 @@ from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
 import os
-import time
 
 class TestAddToCart:
     # Get the URL, user email and password from the config file and initialize the logger
@@ -70,13 +69,12 @@ class TestAddToCart:
             self.ef.clear_quantity_field()
             self.ef.set_quantity(3)
             self.ef.add_to_cart()
-            self.ef.click_shopping_cart_link()
-            time.sleep(2)
 
             # Log the action and proceed to checkout
             self.logger.info("*** Navigate to Shopping Cart webpage and click checkout *** ")
-            self.sc = ShoppingCart(self.driver)
-            self.sc.click_checkout()
+            self.hp.scroll_up()
+            self.hp.click_cart_icon()
+            self.hp.click_to_proceed()
 
             # Log the action and proceed to order the item
             self.logger.info("*** Order the item *** ")

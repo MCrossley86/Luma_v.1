@@ -6,7 +6,7 @@ class OrderSum:
     # Define locators for webpage elements
     ship_method = "//input[@type='radio' and @value='flatrate_flatrate']"
     nxt_btn = "//button[@class='button action continue primary']"
-    order_btn = "//button[@title='Place Order']"
+    order_btn = "(//button[@title='Place Order'])[1]"
 
     def __init__(self, driver):
         # Initialize the driver and logger

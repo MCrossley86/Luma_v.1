@@ -8,6 +8,8 @@ class HomePage:
     hme_pge_head = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='Home Page']"
     lnk_sign_xpath = "//div[@class='panel header']//a[contains(text(),'Sign In')]"
     lnk_account_xpath = "//div[@class='panel header']//a[normalize-space()='Create an Account']"
+    cart_icon = "(//a[@class='action showcart'])[1]"
+    proceed_button = "(//button[normalize-space()='Proceed to Checkout'])[1]"
     sign_out_conf = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='You are signed out']"
     luma_yoga_xpath = "//span[@class='info']"
     search_fld = "//input[@id='search']"
@@ -54,6 +56,23 @@ class HomePage:
         # Log the action and click the "New Luma Collection" link
         self.logger.debug(f"Clicking new luma collection link")
         wait_for_element(self.driver, self.luma_yoga_xpath).click()
+
+    def scroll_up(self):
+        # Log the action and scroll up
+        self.logger.debug(f"Clicking the cart icon")
+        self.driver.execute_script("window.scrollTo(0, 0);")
+
+    def click_cart_icon(self):
+        # Log the action and click the cart icon
+        self.logger.debug(f"Clicking the cart icon")
+        wait_for_element(self.driver, self.cart_icon).click()
+
+    def click_to_proceed(self):
+        # Log the action and click the proceed button
+        self.logger.debug(f"Clicking the proceed to checkpoint button")
+        act = ActionChains(self.driver)
+        click_element = wait_for_element(self.driver, self.proceed_button)
+        act.move_to_element(click_element).click().perform()
 
     def click_search_fld(self):
         # Log the action and click in the search field
