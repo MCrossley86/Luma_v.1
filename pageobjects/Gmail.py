@@ -1,7 +1,5 @@
 from utilities.WaitForElements import wait_for_element
 from utilities.WaitForElements import element_clickable
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 from utilities.CustomLog import LogGenerator
 
 class GmailAccount:
@@ -13,8 +11,8 @@ class GmailAccount:
     save_btn = "//span[normalize-space()='Save']"
     search_field = "//input[@placeholder='Search mail']"
     magnify_icon = "//button[@aria-label='Search mail']//*[name()='svg']"
-    g_mail = "//span[normalize-space()='Recover Your Account']"
-    recover_acc = "//a[normalize-space()='recover your account']"
+    g_mail = "//tr[@id=':5s']"
+    recover_acc = "(//a[contains(text(),'review and protect')])[1]"
 
     def __init__(self, driver):
         # Initialize the driver and logger

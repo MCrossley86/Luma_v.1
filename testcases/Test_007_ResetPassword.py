@@ -5,7 +5,7 @@ from pageobjects.ForgotYourPassword import ForgotPwd
 from pageobjects.Gmail import GmailAccount
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
-# import pytest
+import pytest
 import os
 
 class TestResetPwd:
@@ -15,7 +15,7 @@ class TestResetPwd:
     password = ReadConfig.get_password()
     logger = LogGenerator.get_logger()
 
-    # @pytest.mark.sanity
+    # @pytest.mark.regression
     def test_login(self, setup):
         # Log the action, define and create a path to save screenshots
         self.logger.info("*** Test_009_ResetPassword Started ***")
@@ -60,7 +60,7 @@ class TestResetPwd:
             self.ga.click_next()
             self.ga.enter_pwd(self.password)
             self.ga.click_next()
-            self.ga.gmail_search_field("Recover Your Account")
+            self.ga.gmail_search_field("Welcome back to your account")
             self.ga.magnify_glass()
             self.ga.open_gmail()
             self.ga.recovering_account()
