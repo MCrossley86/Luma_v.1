@@ -37,7 +37,8 @@ class TestSearchField:
             self.logger.info("*** Checking for header title ***")
             self.sr = SearchResults(self.driver)
             self.conf_title = self.sr.capture_header_txt()
-            assert self.conf_title == "Search results for: 'argus'"
+            self.capt_url = self.sr.capture_url()
+            assert self.conf_title == "Search results for: 'argus'" and self.capt_url == "https://magento.softwaretestingboard.com/catalogsearch/result/?q=+argus"
             self.driver.quit()
             self.logger.info("*** Test_010_Search_Field Passed ***")
 

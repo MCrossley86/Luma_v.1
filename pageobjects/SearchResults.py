@@ -11,6 +11,10 @@ class SearchResults:
         self.driver = driver
         self.logger = LogGenerator.get_logger()
 
+    def capture_url(self):
+        # Capture the url
+        return self.driver.current_url
+
     def capture_header_txt(self):
         # Log the action and capture the header text
         self.logger.debug(f"Capturing header text")
