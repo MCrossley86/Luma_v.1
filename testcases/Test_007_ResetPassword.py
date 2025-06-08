@@ -25,6 +25,13 @@ class TestResetPwd:
             os.makedirs(screenshots_path)
 
         try:
+            # Log the action and import the classes from the Page Object files
+            self.logger.info("*** Adding Classes from Page Object files ***")
+            self.hp = HomePage(self.driver)
+            self.cl = CustLogin(self.driver)
+            self.fp = ForgotPwd(self.driver)
+            self.ga = GmailAccount(self.driver)
+
             # Log the action and navigate to the main page
             self.logger.info("*** Navigate to the main page ***")
             self.driver.get(self.baseURL)
@@ -32,17 +39,14 @@ class TestResetPwd:
 
             # Log the action and click the "Sign In" link
             self.logger.info("*** Click Sign In ***")
-            self.hp = HomePage(self.driver)
             self.hp.click_sign_in_lnk()
 
             # Log the action and click "Forgot Your Password"
             self.logger.info("*** Click Forgot Your Password ***")
-            self.cl = CustLogin(self.driver)
             self.cl.click_forgot_pwd()
 
             # Log the action and reset the password
             self.logger.info("*** Resetting the password ***")
-            self.fp = ForgotPwd(self.driver)
             self.fp.enter_email(self.user_email)
             self.fp.click_reset()
 
@@ -55,7 +59,6 @@ class TestResetPwd:
             self.driver.execute_script("window.open('');")
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.driver.get("https://mail.google.com")
-            self.ga = GmailAccount(self.driver)
             self.ga.enter_email(self.user_email)
             self.ga.click_next()
             self.ga.enter_pwd(self.password)

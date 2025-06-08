@@ -21,6 +21,11 @@ class TestSearchField:
             os.makedirs(screenshots_path)
 
         try:
+            # Log the action and import the classes from the Page Object files
+            self.logger.info("*** Adding Classes from Page Object files ***")
+            self.hp = HomePage(self.driver)
+            self.sr = SearchResults(self.driver)
+
             # Log the action and navigate to the main page
             self.logger.info("*** Navigate to the main page ***")
             self.driver.get(self.baseURL)
@@ -28,14 +33,12 @@ class TestSearchField:
 
             # Log the action and search for a specific item
             self.logger.info("*** Clicking in the search field and searching ***")
-            self.hp = HomePage(self.driver)
             self.hp.click_search_fld()
             self.hp.set_search_item("Argus")
             self.hp.select_search_item()
 
             # Log the action and check for the header title
             self.logger.info("*** Checking for header title ***")
-            self.sr = SearchResults(self.driver)
             self.conf_title = self.sr.capture_header_txt()
             self.capt_url = self.sr.capture_url()
             assert self.conf_title == "Search results for: 'argus'" and self.capt_url == "https://magento.softwaretestingboard.com/catalogsearch/result/?q=+argus"
