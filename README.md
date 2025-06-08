@@ -109,12 +109,13 @@
       - "Training" and submenu
       - "Sale"
 
-24. **Current Project**
+24. **Code Updates**
+    - Made code edits to the page object and test case files to ensure that they were more streamlined and robust
+
+25. **Current Project**
     - Investigate why the automation log is creating new logs - IN PROGRESS
-    - Investigate how to reset password and add it to the file - IN PROGRESS
-    - Organize the test cases and page object files so that they're more cohesive and streamlined - IN PROGRESS 
        
-25. **Future Projects**
+26. **Future Projects**
     - Validate login functionality - COMPLETE
     - Validate logout functionality - COMPLETE
     - Validate the add to cart functionality - COMPLETE
@@ -127,5 +128,5 @@
     - Validate the account menu functionality 
     - Expand on the login page by creating a data-driven test
 
-26. **DEPRECATED Files**
+27. **DEPRECATED Files**
     - Test_003_Logout
