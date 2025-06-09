@@ -69,38 +69,38 @@
 
 16. **Automated Login DDT Test Case**
     - Developed test class for Data-Driven Testing (DDT) login.
-    - Created a test case "Test_004_Login_DDT" to perform login using data from an Excel sheet.
+    - Created a test case "Test_011_Login_DDT" to perform login using data from an Excel sheet.
     - Iterated through multiple test cases in Excel, reading email, password, and expected result.
     - Determined pass/fail status based on the expected result and logged the results.
     - Asserted the final result based on the overall status of test cases.
 
 17. **Automated Adding To The Cart**
     - Developed the following page object files "EchoFit", "ShoppingCart" and "YogaCollection"
-    - Created test case "Test_005_AddToCart" to check that a user can add items to a cart.
+    - Created test case "Test_003_AddToCart" to check that a user can add items to a cart.
 
 18. **Automated Adding To Compare**
     - Developed the following page object files "CompareProducts"
-    - Created test case "Test_006_AddToCompare" to check that a user can add items to list and compare. 
+    - Created test case "Test_004_AddToCompare" to check that a user can add items to list and compare. 
 19. **Automated Adding To Wish List**
     - Developed the following page object files "WishList"
     - Created test case "Test_007_AddToWishList" to check that a user can add and remove items from their Wish List. 
 
 20. **Automated Checking Out Items**
     - Developed the page object files "Order Summary" and "Order Confirmation"
-    - Created test case "Test_008_OrderItem" to check that a user can purchase an item
+    - Created test case "Test_006_OrderItem" to check that a user can purchase an item
 
 21. **Automated Resetting Password**
     - Developed the page object files "Forgot Your Password"
-    - Created test case "Test_009_ResetPassword" to check that a user can reset their password
+    - Created test case "Test_007_ResetPassword" to check that a user can reset their password
     - **Note** This test case is meant to fail as no email is sent, so link verification is impossible and excluded from sanity checks.
 
 22. **Automated Searching for an Item**
     - Developed the page object files "SearchResults"
-    - Created test case "Test_010_SearchField" to check that a user can search for a specific item
+    - Created test case "Test_008_SearchField" to check that a user can search for a specific item
 
 23. **Automated clicking on the navigation bar**
     - Developed the page object files "NavBar"
-    - Created test case "Test_011_NavBar" to check that a user can click on the nav bar to specific items
+    - Created test case "Test_009_NavBar" to check that a user can click on the nav bar to specific items
     - Following Nav Bar completion:
       - "What's New"
       - "Women" and submenu
@@ -112,10 +112,14 @@
 24. **Code Updates**
     - Made code edits to the page object and test case files to ensure that they were more streamlined and robust
 
-25. **Current Project**
+25. **Automated navigating the account menu**
+    - Created test case "Test_010_AccountMenu" to check that a user can navigate to the following webpages "My Account" and "Wish List" whilst also being able to sign out
+
+26. **Current Project**
     - Investigate why the automation log is creating new logs - IN PROGRESS
+    - Tidy up Test_002 - IN PROGRESS
        
-26. **Future Projects**
+27. **Future Projects**
     - Validate login functionality - COMPLETE
     - Validate logout functionality - COMPLETE
     - Validate the add to cart functionality - COMPLETE
@@ -125,8 +129,7 @@
     - Validate reset password functionality - COMPLETE
     - Validate search functionality - COMPLETE
     - Validate the Navigation Bar - COMPLETE
-    - Validate the account menu functionality 
-    - Expand on the login page by creating a data-driven test
+    - Validate the account menu functionality - COMPLETE
 
-27. **DEPRECATED Files**
+28. **DEPRECATED Files**
     - Test_003_Logout
