@@ -5,8 +5,8 @@ from utilities.CustomLog import LogGenerator
 class MyAccount:
     # Define locators for webpage elements
     txt_conf = "//span[@class='base' and @data-ui-id='page-title-wrapper' and text()='My Account']"
-    lnk_my_account_xpath = "//div[@aria-hidden='false']//a[normalize-space()='My Account']"
-    lnk_my_wishlist_xpath = "//div[@aria-hidden='false']//a[normalize-space()='My Wish List']"
+    lnk_my_account_xpath = "(//a[normalize-space()='My Account'])[1]"
+    lnk_my_wishlist_xpath = "(//a[normalize-space()='My Wish List'])[1]"
 
     def __init__(self, driver):
         # Initialize the driver and logger
