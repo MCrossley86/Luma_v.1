@@ -62,11 +62,10 @@
 
     **Continuous Integration**
 
-15. **Automated Login/Logout Test Case**
+15. **Automated Login Test Case**
     - Developed page object class for the login "CustomerLogin".
     - Created a test case "Test_002_Login" to check that a user can log in.
-    - Test_002_Login has now been updated to Test_002_Login_Logout to include both logging in and out
-
+    
 16. **Automated Login DDT Test Case**
     - Developed test class for Data-Driven Testing (DDT) login.
     - Created a test case "Test_011_Login_DDT" to perform login using data from an Excel sheet.
@@ -117,7 +116,6 @@
 
 26. **Current Project**
     - Investigate why the automation log is creating new logs - IN PROGRESS
-    - Tidy up Test_002 - IN PROGRESS
        
 27. **Future Projects**
     - Validate login functionality - COMPLETE
