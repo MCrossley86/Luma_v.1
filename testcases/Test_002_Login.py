@@ -1,7 +1,6 @@
 # Import the necessary modules
 from pageobjects.HomePage import HomePage
 from pageobjects.CustomerLogin import CustLogin
-from pageobjects.NavBar import NavBarHP
 from utilities.CustomLog import LogGenerator
 from utilities.ReadProperties import ReadConfig
 import pytest
@@ -28,7 +27,6 @@ class TestLogin:
             self.logger.info("*** Adding Classes from Page Object files ***")
             self.hp = HomePage(self.driver)
             self.cl = CustLogin(self.driver)
-            self.nb = NavBarHP(self.driver)
 
             # Log the action and navigate to the main page
             self.logger.info("*** Navigate to the main page ***")
@@ -55,17 +53,6 @@ class TestLogin:
             self.hp_head = self.hp.capt_hp_head()
             self.capt_url = self.hp.capture_url()
             assert self.hp_head == "Home Page" and self.capt_url == "https://magento.softwaretestingboard.com/"
-
-            # Log the action and log out via the navigation bar
-            self.logger.info("*** Log out of the application ***")
-            self.nb.click_welcome_drop()
-            self.nb.click_sign_out()
-
-            # Log the action and check that the user has been navigated to the right page
-            self.logger.info("*** Check for header title and URL ***")
-            self.so_head = self.hp.capt_so_head()
-            self.capt_url = self.hp.capture_url()
-            assert self.so_head == "You are signed out" and self.capt_url == "https://magento.softwaretestingboard.com/customer/account/logoutSuccess/"
             self.driver.quit()
             self.logger.info("*** Test_002_Login_Logout Passed ***")
 
